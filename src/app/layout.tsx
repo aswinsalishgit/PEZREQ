@@ -66,6 +66,7 @@ import { StoreProvider } from "@/lib/context/StoreContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import SearchOverlay from "@/components/search/SearchOverlay";
 import PageTransition from "@/components/ui/PageTransition";
+import WaterBubbleScroll from "@/components/ui/WaterBubbleScroll";
 
 export default function RootLayout({
   children,
@@ -79,6 +80,7 @@ export default function RootLayout({
           <PageTransition>
             {children}
           </PageTransition>
+          <WaterBubbleScroll />
           <CartDrawer />
           <SearchOverlay />
         </StoreProvider>

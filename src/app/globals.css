@@ -100,18 +100,13 @@ a, button, [role="button"] {
   outline-offset: 2px;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling - Hidden globally */
 ::-webkit-scrollbar {
-  width: 5px;
+  display: none;
 }
-::-webkit-scrollbar-track {
-  background: var(--color-ivory);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-muted-neutral);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-charcoal);
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Reduced Motion Handling */
