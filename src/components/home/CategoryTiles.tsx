@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const categories = [
@@ -9,28 +10,32 @@ const categories = [
     href: "/shop/rings", 
     desc: "Sculptural forms for the hands.",
     colSpan: "col-span-1 md:col-span-2",
-    theme: "dark"
+    theme: "dark",
+    img: "https://images.unsplash.com/photo-1605100804763-247f66150ce8?q=80&w=2000&auto=format&fit=crop"
   },
   { 
     title: "Necklaces", 
     href: "/shop/necklaces", 
     desc: "Fluid geometry.",
     colSpan: "col-span-1",
-    theme: "light"
+    theme: "light",
+    img: "https://images.unsplash.com/photo-1599643478514-4a4e09f52f5e?q=80&w=2000&auto=format&fit=crop"
   },
   { 
     title: "Bracelets", 
     href: "/shop/bracelets", 
     desc: "Architectural cuffs.",
     colSpan: "col-span-1",
-    theme: "light"
+    theme: "light",
+    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2000&auto=format&fit=crop"
   },
   { 
     title: "Earrings", 
     href: "/shop/earrings", 
     desc: "Lightweight, dramatic, timeless.",
     colSpan: "col-span-1 md:col-span-2",
-    theme: "dark"
+    theme: "dark",
+    img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2000&auto=format&fit=crop"
   },
 ];
 
@@ -42,8 +47,18 @@ export default function CategoryTiles() {
           <ScrollReveal 
             key={cat.title} 
             delay={idx * 0.15} 
-            className={`group relative overflow-hidden flex flex-col justify-end p-8 md:p-12 min-h-[45vh] transition-transform duration-1000 ease-[0.16,1,0.3,1] ${cat.colSpan} ${cat.theme === 'dark' ? 'bg-pezreq-charcoal text-pezreq-ivory' : 'bg-pezreq-champagne text-pezreq-charcoal'} hover:scale-[0.98]`}
+            className={`group relative overflow-hidden flex flex-col justify-end p-8 md:p-12 min-h-[45vh] transition-transform duration-1000 ease-[0.16,1,0.3,1] ${cat.colSpan} ${cat.theme === 'dark' ? 'text-pezreq-ivory' : 'text-pezreq-charcoal'} hover:scale-[0.98]`}
           >
+            <Image 
+              src={cat.img} 
+              alt={cat.title} 
+              fill 
+              className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105" 
+            />
+            
+            {/* Gradient overlay for text legibility */}
+            <div className={`absolute inset-0 z-0 ${cat.theme === 'dark' ? 'bg-gradient-to-t from-black/80 via-black/20 to-transparent' : 'bg-gradient-to-t from-white/90 via-white/30 to-transparent'}`} />
+
             <Link href={cat.href} className="absolute inset-0 z-20" aria-label={`Shop ${cat.title}`} />
             
             {/* The signature liquid glass hover reveal */}
