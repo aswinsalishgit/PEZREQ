@@ -67,6 +67,7 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import SearchOverlay from "@/components/search/SearchOverlay";
 import PageTransition from "@/components/ui/PageTransition";
 import WaterBubbleScroll from "@/components/ui/WaterBubbleScroll";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -80,6 +81,7 @@ export default function RootLayout({
           <PageTransition>
             {children}
           </PageTransition>
+          <CustomCursor />
           <WaterBubbleScroll />
           <CartDrawer />
           <SearchOverlay />

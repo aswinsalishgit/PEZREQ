@@ -30,7 +30,7 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-y-0 right-0 w-full max-w-md bg-pezreq-ivory/80 backdrop-blur-3xl border-l border-glass-border shadow-[-10px_0_30px_rgba(0,0,0,0.03)] z-[110] flex flex-col"
+            className="fixed inset-y-0 right-0 w-full max-w-md bg-white/40 backdrop-blur-3xl saturate-200 border-l border-white/50 shadow-[-10px_0_30px_rgba(0,0,0,0.1)] z-[110] flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 md:p-8 border-b border-glass-border">

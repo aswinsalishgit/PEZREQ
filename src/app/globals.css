@@ -78,9 +78,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure interactive elements have pointer cursor */
+/* Ensure interactive elements have pointer cursor, unless custom cursor is active */
 a, button, [role="button"] {
   cursor: pointer;
+}
+
+html.hide-cursor, 
+html.hide-cursor * {
+  cursor: none !important;
 }
 
 /* Selection Styling */

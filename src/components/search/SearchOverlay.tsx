@@ -42,7 +42,7 @@ export default function SearchOverlay() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 bg-pezreq-ivory/80 backdrop-blur-3xl z-[120] overflow-y-auto"
+          className="fixed inset-0 bg-white/30 backdrop-blur-3xl saturate-200 z-[120] overflow-y-auto"
         >
           <div className="container-luxury py-8 md:py-12">
             {/* Header / Close */}
