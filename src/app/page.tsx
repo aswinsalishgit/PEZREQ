@@ -8,6 +8,7 @@ import ProductCarousel from "@/components/product/ProductCarousel";
 import { products } from "@/data/products";
 import { ArrowRight } from "lucide-react";
 import ParallaxImage from "@/components/ui/ParallaxImage";
+import CategoryTiles from "@/components/home/CategoryTiles";
 
 export default function Home() {
   const signatureProducts = products.filter(p => p.bestSeller || p.newArrival);
@@ -35,32 +36,8 @@ export default function Home() {
       {/* 1. HERO */}
       <Hero />
 
-      {/* 2. CATEGORY TILES */}
-      <section className="w-full bg-pezreq-charcoal">
-        <div className="grid grid-cols-2 md:grid-cols-4 w-full h-[60vh] md:h-[80vh]">
-          {[
-            { title: "Rings", href: "/shop/rings", img: "/placeholder.jpg" },
-            { title: "Necklaces", href: "/shop/necklaces", img: "/placeholder.jpg" },
-            { title: "Bracelets", href: "/shop/bracelets", img: "/placeholder.jpg" },
-            { title: "Earrings", href: "/shop/earrings", img: "/placeholder.jpg" },
-          ].map((cat, idx) => (
-            <Link key={cat.title} href={cat.href} className="group relative block w-full h-full overflow-hidden border-r border-b md:border-b-0 border-white/10 last:border-r-0">
-              <Image 
-                src={cat.img} 
-                alt={cat.title} 
-                fill 
-                className="object-cover opacity-50 grayscale transition-all duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-110 group-hover:opacity-90 group-hover:grayscale-0" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
-              <div className="absolute inset-0 flex items-center justify-center p-4">
-                <h3 className="font-serif text-2xl md:text-3xl text-pezreq-ivory tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity text-center">
-                  {cat.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* 2. CATEGORY TILES (BENTO BOX) */}
+      <CategoryTiles />
 
       {/* 3. FEATURED COLLECTION (Asymmetrical) */}
       <section className="py-24 container-luxury">
@@ -135,9 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* 7. CRAFTSMANSHIP (Storytelling) */}
+      {/* 5. CRAFTSMANSHIP (Storytelling) */}
       <section className="py-24 md:py-32 bg-pezreq-charcoal text-pezreq-ivory">
         <div className="container-luxury grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
