@@ -73,7 +73,7 @@ export default function Hero() {
       {/* Hero Content */}
       <motion.div 
         style={{ y: contentY, opacity }}
-        className="relative z-20 h-full flex flex-col items-center justify-end md:justify-center pb-24 md:pb-0 text-center px-6 max-w-5xl mx-auto"
+        className="relative z-20 h-full flex flex-col items-center justify-end md:justify-center pb-24 md:pb-0 text-center px-6 max-w-7xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         animate="show"
@@ -87,9 +87,9 @@ export default function Hero() {
 
         <motion.h1 
           variants={itemVariants}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-pezreq-ivory leading-[1.1] md:leading-[1] tracking-tight uppercase mb-6 md:mb-8 drop-shadow-2xl"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] text-pezreq-ivory leading-[1.1] md:leading-[1] tracking-tight uppercase mb-6 md:mb-8 drop-shadow-2xl"
         >
-          TIMELESS JEWELLERY <br /> FOR EVERYDAY MOMENTS.
+          TIMELESS JEWELLERY, <br /> FOR EVERYDAY MOMENTS.
         </motion.h1>
 
         <motion.p 
