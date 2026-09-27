@@ -36,7 +36,7 @@ export default function WaterBubbleScroll() {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <motion.div
-        className="w-4 h-4 md:w-5 md:h-5 bg-white/40 backdrop-blur-3xl backdrop-saturate-200 border border-white/50 shadow-[0_4px_12px_rgba(0,0,0,0.1),inset_0_2px_4px_rgba(255,255,255,0.6)] mix-blend-screen"
+        className="w-3 h-3 md:w-4 md:h-4 bg-white mix-blend-difference shadow-[0_0_10px_rgba(255,255,255,0.5)]"
         animate={{
           borderRadius: [
             "50% 50% 50% 50% / 50% 50% 50% 50%",
@@ -51,9 +51,7 @@ export default function WaterBubbleScroll() {
           repeat: Infinity,
           repeatType: "mirror"
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-transparent rounded-[inherit]" />
-      </motion.div>
+      />
     </motion.div>
   );
 }
