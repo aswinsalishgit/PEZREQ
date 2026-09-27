@@ -60,7 +60,7 @@ export default function Header() {
             <div className="flex lg:hidden flex-1">
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="p-2 -ml-2 focus:outline-none focus:ring-2 focus:ring-pezreq-muted"
+                className="p-2 -ml-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-pezreq-muted"
                 aria-label="Open menu"
               >
                 <Menu className="h-6 w-6" strokeWidth={1.2} />
@@ -73,7 +73,7 @@ export default function Header() {
                 <div key={item.label} className="relative group">
                   <Link
                     href={item.href}
-                    className="text-nav hover:opacity-60 transition-opacity focus:outline-none py-6 block"
+                    className="text-nav cursor-pointer hover:opacity-60 transition-opacity focus:outline-none py-6 block"
                     onMouseEnter={() => setActiveMenu(item.menu)}
                     onKeyDown={(e) => handleKeyDown(e, item.menu)}
                   >
@@ -117,20 +117,20 @@ export default function Header() {
             <div className="flex-1 flex justify-end items-center space-x-4 lg:space-x-6">
               <button 
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2 hover:opacity-60 transition-opacity focus:outline-none" 
+                className="p-2 cursor-pointer hover:opacity-60 transition-opacity focus:outline-none" 
                 aria-label="Search"
               >
                 <Search className="h-5 w-5" strokeWidth={1.2} />
               </button>
-              <Link href="/wishlist" className="hidden lg:block p-2 hover:opacity-60 transition-opacity focus:outline-none" aria-label="Wishlist">
+              <Link href="/wishlist" className="hidden lg:block p-2 cursor-pointer hover:opacity-60 transition-opacity focus:outline-none" aria-label="Wishlist">
                 <Heart className="h-5 w-5" strokeWidth={1.2} />
               </Link>
-              <Link href="/account" className="hidden lg:block p-2 hover:opacity-60 transition-opacity focus:outline-none" aria-label="Account">
+              <Link href="/account" className="hidden lg:block p-2 cursor-pointer hover:opacity-60 transition-opacity focus:outline-none" aria-label="Account">
                 <User className="h-5 w-5" strokeWidth={1.2} />
               </Link>
               <button 
                 onClick={() => setIsCartOpen(true)}
-                className="p-2 hover:opacity-60 transition-opacity focus:outline-none flex items-center gap-2" 
+                className="p-2 cursor-pointer hover:opacity-60 transition-opacity focus:outline-none flex items-center gap-2" 
                 aria-label="Cart"
               >
                 <ShoppingBag className="h-5 w-5" strokeWidth={1.2} />
