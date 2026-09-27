@@ -1,42 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  /* Luxury Palette */
-  --background: #FCFCFA; /* Ivory / warm white */
-  --foreground: #1A1A1A; /* Near-black */
-  
-  --charcoal: #2C2C2C;
-  --champagne: #F2EBE5;
-  --champagne-dark: #D6CFC9;
-  --muted-gold: #BCA37F;
-  --warm-grey: #E5E5E5;
-  --warm-grey-dark: #8C8C8C;
-  
-  --glass-bg: rgba(252, 252, 250, 0.7);
-  --glass-border: rgba(26, 26, 26, 0.05);
+  /* =========================================
+     COLORS (Swiss Editorial + Luxury)
+     ========================================= */
+  --color-ivory: #FCFCFA;
+  --color-warm-white: #F8F7F5;
+  --color-champagne: #F2EBE5;
+  --color-charcoal: #2C2C2C;
+  --color-near-black: #1A1A1A;
+  --color-muted-neutral: #8C8C8C;
+  --color-metallic-accent: #BCA37F;
+  --color-glass-bg: rgba(252, 252, 250, 0.75);
+  --color-glass-bg-dark: rgba(26, 26, 26, 0.75);
+  --color-glass-border: rgba(26, 26, 26, 0.08);
+  --color-glass-border-light: rgba(252, 252, 250, 0.15);
 
+  /* Semantic Colors */
+  --background: var(--color-ivory);
+  --foreground: var(--color-near-black);
+  
+  /* =========================================
+     TYPOGRAPHY
+     ========================================= */
   --font-serif: var(--font-playfair), "Times New Roman", Times, serif;
   --font-sans: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* =========================================
+     SPACING (Editorial Scale)
+     ========================================= */
+  --spacing-micro: 0.25rem;
+  --spacing-tight: 0.5rem;
+  --spacing-base: 1rem;
+  --spacing-relaxed: 2rem;
+  --spacing-loose: 4rem;
+  --spacing-airy: 8rem;
+  --spacing-cinematic: 12rem;
+
+  /* =========================================
+     EFFECTS & BORDERS
+     ========================================= */
+  --border-subtle: 1px solid var(--color-glass-border);
+  --shadow-soft: 0 10px 40px -10px rgba(26, 26, 26, 0.05);
+  --shadow-float: 0 20px 60px -15px rgba(26, 26, 26, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
-  --color-pezreq-charcoal: var(--charcoal);
-  --color-pezreq-champagne: var(--champagne);
-  --color-pezreq-champagne-dark: var(--champagne-dark);
-  --color-pezreq-gold: var(--muted-gold);
-  --color-pezreq-warm-grey: var(--warm-grey);
-  --color-pezreq-warm-grey-dark: var(--warm-grey-dark);
+  /* Theme Colors */
+  --color-pezreq-ivory: var(--color-ivory);
+  --color-pezreq-warm-white: var(--color-warm-white);
+  --color-pezreq-champagne: var(--color-champagne);
+  --color-pezreq-charcoal: var(--color-charcoal);
+  --color-pezreq-near-black: var(--color-near-black);
+  --color-pezreq-muted: var(--color-muted-neutral);
+  --color-pezreq-metallic: var(--color-metallic-accent);
 
-  --color-glass-bg: var(--glass-bg);
-  --color-glass-border: var(--glass-border);
-
+  /* Theme Fonts */
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 }
 
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
 html {
   scroll-behavior: smooth;
 }
@@ -49,30 +78,135 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Utility Classes */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Selection Styling */
+::selection {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+}
+
+::-moz-selection {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-neutral);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-charcoal);
+}
+
+/* Reduced Motion Handling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* Custom Scrollbar for Luxury Feel */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--warm-grey-dark);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--charcoal);
+/* =========================================
+   UTILITIES (Typography)
+   ========================================= */
+@layer utilities {
+  .text-display {
+    @apply font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none;
+  }
+  .text-editorial {
+    @apply font-serif text-3xl md:text-5xl leading-tight tracking-normal text-balance;
+  }
+  .text-nav {
+    @apply font-sans text-xs tracking-[0.2em] uppercase font-medium;
+  }
+  .text-body {
+    @apply font-sans text-sm md:text-base leading-relaxed font-light text-pezreq-charcoal/80;
+  }
+  .text-meta {
+    @apply font-sans text-xs text-pezreq-muted;
+  }
+  .text-micro {
+    @apply font-sans text-[10px] tracking-widest uppercase text-pezreq-muted;
+  }
 }
 
-/* Selection */
-::selection {
-  background-color: var(--charcoal);
-  color: var(--background);
+/* =========================================
+   UTILITIES (Effects)
+   ========================================= */
+@layer utilities {
+  .glass {
+    background-color: var(--color-glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-subtle);
+  }
+  .glass-dark {
+    background-color: var(--color-glass-bg-dark);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-glass-border-light);
+  }
+  .liquid-glass {
+    background: linear-gradient(
+      135deg, 
+      rgba(252, 252, 250, 0.4) 0%, 
+      rgba(252, 252, 250, 0.1) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-soft);
+  }
+  .overlay-dark {
+    @apply absolute inset-0 bg-pezreq-charcoal/30 mix-blend-multiply;
+  }
+  .overlay-light {
+    @apply absolute inset-0 bg-pezreq-ivory/10;
+  }
+  .bg-grain {
+    position: relative;
+  }
+  .bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =========================================
+   UTILITIES (Layout & Grid)
+   ========================================= */
+@layer utilities {
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-4 sm:px-8 lg:px-12;
+  }
+  .grid-luxury {
+    @apply grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-4 md:gap-x-6 lg:gap-x-8;
+  }
+  .parallax-container {
+    clip-path: inset(0);
+  }
 }
