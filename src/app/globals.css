@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Luxury Palette */
+  --background: #FCFCFA; /* Ivory / warm white */
+  --foreground: #1A1A1A; /* Near-black */
+  
+  --charcoal: #2C2C2C;
+  --champagne: #F2EBE5;
+  --champagne-dark: #D6CFC9;
+  --muted-gold: #BCA37F;
+  --warm-grey: #E5E5E5;
+  --warm-grey-dark: #8C8C8C;
+  
+  --glass-bg: rgba(252, 252, 250, 0.7);
+  --glass-border: rgba(26, 26, 26, 0.05);
+
+  --font-serif: var(--font-playfair), "Times New Roman", Times, serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-pezreq-charcoal: var(--charcoal);
+  --color-pezreq-champagne: var(--champagne);
+  --color-pezreq-champagne-dark: var(--champagne-dark);
+  --color-pezreq-gold: var(--muted-gold);
+  --color-pezreq-warm-grey: var(--warm-grey);
+  --color-pezreq-warm-grey-dark: var(--warm-grey-dark);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--warm-grey-dark);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--charcoal);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--charcoal);
+  color: var(--background);
+}
