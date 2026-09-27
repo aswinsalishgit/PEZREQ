@@ -88,15 +88,25 @@ export default function Header() {
             </nav>
 
             {/* Center Logo */}
-            <div className="flex-shrink-0 flex items-center justify-center cursor-pointer">
-              <Link href="/" className="focus:outline-none" aria-label="PEZREQ Home">
+            <div className="flex-shrink-0 flex items-center justify-center cursor-pointer relative h-12 w-[140px]">
+              <Link href="/" className="focus:outline-none absolute inset-0 w-full h-full" aria-label="PEZREQ Home">
                 <Image 
-                  src="/pezreq logo.png" 
+                  src="/pezreq-logo-white.png" 
                   alt="PEZREQ" 
-                  width={140} 
-                  height={140}
-                  className={`h-12 w-auto object-contain transition-all duration-500 ${
-                    !isSolid ? "brightness-0 invert" : ""
+                  fill
+                  sizes="140px"
+                  className={`object-contain transition-opacity duration-500 ${
+                    !isSolid ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority
+                />
+                <Image 
+                  src="/pezreq-logo-black.png" 
+                  alt="PEZREQ" 
+                  fill
+                  sizes="140px"
+                  className={`object-contain transition-opacity duration-500 ${
+                    isSolid ? "opacity-100" : "opacity-0"
                   }`}
                   priority
                 />
