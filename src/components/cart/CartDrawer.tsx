@@ -30,7 +30,7 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-y-0 right-0 w-full max-w-md bg-background z-[110] flex flex-col shadow-2xl"
+            className="fixed inset-y-0 right-0 w-full max-w-md bg-pezreq-ivory/80 backdrop-blur-3xl border-l border-glass-border shadow-[-10px_0_30px_rgba(0,0,0,0.03)] z-[110] flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 md:p-8 border-b border-glass-border">
@@ -129,7 +129,7 @@ export default function CartDrawer() {
 
             {/* Footer */}
             {cart.length > 0 && (
-              <div className="border-t border-glass-border p-6 md:p-8 bg-background">
+              <div className="border-t border-glass-border p-6 md:p-8 bg-transparent">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-nav uppercase tracking-widest text-pezreq-charcoal">Subtotal</span>
                   <span className="text-xl font-light text-pezreq-charcoal">

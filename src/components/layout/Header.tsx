@@ -45,7 +45,7 @@ export default function Header() {
   const isSolid = isScrolled || activeMenu !== null;
   const headerClass = `fixed top-0 w-full z-50 transition-all duration-700 ease-in-out ${
     isSolid 
-      ? "bg-pezreq-ivory/95 backdrop-blur-xl shadow-sm text-pezreq-charcoal" 
+      ? "bg-pezreq-ivory/80 backdrop-blur-2xl border-b border-glass-border shadow-[0_4px_30px_rgba(0,0,0,0.03)] text-pezreq-charcoal" 
       : "bg-transparent text-pezreq-ivory"
   }`;
 

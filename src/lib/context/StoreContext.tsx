@@ -43,10 +43,14 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const savedCart = localStorage.getItem("pezreq_cart");
-      if (savedCart) setCart(JSON.parse(savedCart));
+      if (savedCart) {
+        queueMicrotask(() => setCart(JSON.parse(savedCart)));
+      }
       
       const savedWishlist = localStorage.getItem("pezreq_wishlist");
-      if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
+      if (savedWishlist) {
+        queueMicrotask(() => setWishlist(JSON.parse(savedWishlist)));
+      }
     } catch {
       console.warn("Could not load local storage data");
     }

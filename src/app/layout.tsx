@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 import { StoreProvider } from "@/lib/context/StoreContext";
 import CartDrawer from "@/components/cart/CartDrawer";
 import SearchOverlay from "@/components/search/SearchOverlay";
+import PageTransition from "@/components/ui/PageTransition";
 
 export default function RootLayout({
   children,
@@ -36,7 +37,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background">
         <StoreProvider>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <CartDrawer />
           <SearchOverlay />
         </StoreProvider>

@@ -7,6 +7,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ProductCarousel from "@/components/product/ProductCarousel";
 import { products } from "@/data/products";
 import { ArrowRight } from "lucide-react";
+import ParallaxImage from "@/components/ui/ParallaxImage";
 
 export default function Home() {
   const signatureProducts = products.filter(p => p.bestSeller || p.newArrival);
@@ -20,7 +21,7 @@ export default function Home() {
 
       {/* 2. BRAND STATEMENT */}
       <section className="py-32 md:py-48 px-4 sm:px-8 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <ScrollReveal>
+        <ScrollReveal type="typography">
           <h2 className="text-editorial text-pezreq-charcoal mb-12">
             &quot;Jewellery shaped by restraint, material, and form.&quot;
           </h2>
@@ -34,19 +35,19 @@ export default function Home() {
       <section className="py-24 container-luxury">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <ScrollReveal direction="right">
+            <ScrollReveal direction="right" type="image">
               <div className="relative aspect-[4/5] w-full bg-pezreq-champagne overflow-hidden group">
-                <Image 
+                <ParallaxImage 
                   src="/placeholder-collection.jpg" 
                   alt="Featured Collection" 
-                  fill 
-                  className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105"
+                  containerClassName="absolute inset-0 w-full h-full"
+                  className="transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105"
                 />
               </div>
             </ScrollReveal>
           </div>
           <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-start lg:pt-32">
-            <ScrollReveal direction="left">
+            <ScrollReveal direction="left" type="typography">
               <span className="text-micro mb-6 block text-pezreq-muted">LATEST ARRIVAL</span>
               <h3 className="font-serif text-4xl lg:text-5xl text-pezreq-charcoal mb-8 leading-tight">
                 The Contour Collection
@@ -56,7 +57,7 @@ export default function Home() {
               </p>
               <Link 
                 href="/collections/contour"
-                className="group flex items-center gap-4 text-nav border-b border-pezreq-charcoal/30 pb-2 hover:border-pezreq-charcoal transition-colors"
+                className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors"
               >
                 Discover Contour
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500" />
@@ -74,7 +75,7 @@ export default function Home() {
             <p className="text-body mt-4 max-w-md">Our most definitive pieces, refined over time to absolute purity.</p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <Link href="/shop" className="text-nav border-b border-pezreq-charcoal/30 pb-1 hover:border-pezreq-charcoal transition-colors">
+            <Link href="/shop" className="text-nav link-underline pb-1 transition-colors">
               View All Pieces
             </Link>
           </ScrollReveal>
@@ -84,13 +85,12 @@ export default function Home() {
 
       {/* 5. FULL-BLEED CAMPAIGN */}
       <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
-        <Image 
+        <ParallaxImage 
           src="/pezreq banner.png" 
           alt="Campaign Banner"
-          fill
-          className="object-cover"
+          overlay={true}
+          containerClassName="absolute inset-0 w-full h-full"
         />
-        <div className="absolute inset-0 bg-pezreq-charcoal/30 mix-blend-multiply" />
         <div className="absolute inset-0 flex items-center justify-center text-center p-4">
           <ScrollReveal>
             <h2 className="text-display text-pezreq-ivory mb-8 drop-shadow-lg">Elevated Daily.</h2>
@@ -131,7 +131,7 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-pezreq-charcoal text-pezreq-ivory">
         <div className="container-luxury grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div>
-            <ScrollReveal>
+            <ScrollReveal type="typography">
               <h3 className="text-micro text-pezreq-muted mb-6">THE ATELIER</h3>
               <h2 className="font-serif text-4xl lg:text-5xl leading-tight mb-8">
                 Swiss precision.<br/>Uncompromising materials.
@@ -139,15 +139,15 @@ export default function Home() {
               <p className="text-body text-pezreq-ivory/70 mb-10">
                 Every PEZREQ piece begins as a raw concept, iterated through hundreds of sketches before reaching the workbench. We employ a blend of traditional goldsmithing and modern precision engineering, ensuring tolerances measured in fractions of a millimeter.
               </p>
-              <Link href="/about" className="text-nav flex items-center gap-4 hover:text-pezreq-muted transition-colors">
+              <Link href="/about" className="text-nav flex items-center gap-4 link-underline pb-1 transition-colors">
                 Explore our Craft <ArrowRight className="w-4 h-4" />
               </Link>
             </ScrollReveal>
           </div>
-          <ScrollReveal direction="left">
+          <ScrollReveal direction="left" type="image">
             <div className="relative aspect-[3/4] w-full border border-pezreq-ivory/10 overflow-hidden bg-pezreq-near-black p-8">
                <div className="w-full h-full relative opacity-70 mix-blend-luminosity">
-                 <Image src="/pezreq banner.png" alt="Craftsmanship" fill className="object-cover" />
+                 <ParallaxImage src="/pezreq banner.png" alt="Craftsmanship" containerClassName="absolute inset-0 w-full h-full" />
                </div>
             </div>
           </ScrollReveal>
@@ -159,7 +159,7 @@ export default function Home() {
         <ScrollReveal>
           <div className="flex justify-between items-end mb-16">
             <h3 className="font-serif text-3xl md:text-4xl text-pezreq-charcoal">The Journal</h3>
-            <Link href="/journal" className="text-nav hidden md:block border-b border-pezreq-charcoal/30 pb-1 hover:border-pezreq-charcoal transition-colors">
+            <Link href="/journal" className="text-nav hidden md:block link-underline pb-1 transition-colors">
               Read All Entries
             </Link>
           </div>
