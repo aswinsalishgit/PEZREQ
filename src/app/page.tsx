@@ -46,7 +46,7 @@ export default function Home() {
             <ScrollReveal direction="right" type="image">
               <div className="relative aspect-[4/5] w-full bg-pezreq-champagne overflow-hidden group">
                 <ParallaxImage 
-                  src="/placeholder-collection.jpg" 
+                  src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2000&auto=format&fit=crop" 
                   alt="Featured Collection" 
                   containerClassName="absolute inset-0 w-full h-full"
                   className="transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105"
@@ -132,7 +132,7 @@ export default function Home() {
           <ScrollReveal direction="left" type="image">
             <div className="relative aspect-[3/4] w-full border border-pezreq-ivory/10 overflow-hidden bg-pezreq-near-black p-8">
                <div className="w-full h-full relative opacity-70 mix-blend-luminosity">
-                 <ParallaxImage src="/pezreq banner.png" alt="Craftsmanship" containerClassName="absolute inset-0 w-full h-full" />
+                 <ParallaxImage src="https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?q=80&w=2000&auto=format&fit=crop" alt="Craftsmanship" containerClassName="absolute inset-0 w-full h-full" />
                </div>
             </div>
           </ScrollReveal>
@@ -151,14 +151,14 @@ export default function Home() {
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "The Architecture of a Ring", date: "SEP 2026", category: "DESIGN" },
-            { title: "Sourcing Ethical Gold", date: "AUG 2026", category: "SUSTAINABILITY" },
-            { title: "An Interview with the Founder", date: "JUL 2026", category: "PEOPLE" },
+            { title: "The Architecture of a Ring", date: "SEP 2026", category: "DESIGN", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop" },
+            { title: "Sourcing Ethical Gold", date: "AUG 2026", category: "SUSTAINABILITY", img: "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=2000&auto=format&fit=crop" },
+            { title: "An Interview with the Founder", date: "JUL 2026", category: "PEOPLE", img: "https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf?q=80&w=2000&auto=format&fit=crop" },
           ].map((post, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
               <Link href="/journal" className="group block">
                 <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden">
-                  <Image src="/placeholder.jpg" alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-micro">{post.category}</span>
