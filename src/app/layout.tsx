@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
+import { StoreProvider } from "@/lib/context/StoreContext";
+import CartDrawer from "@/components/cart/CartDrawer";
+import SearchOverlay from "@/components/search/SearchOverlay";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,7 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background">
-        {children}
+        <StoreProvider>
+          {children}
+          <CartDrawer />
+          <SearchOverlay />
+        </StoreProvider>
       </body>
     </html>
   );

@@ -6,13 +6,21 @@ import { Product } from "@/data/products";
 import Accordion from "@/components/ui/Accordion";
 import { Heart } from "lucide-react";
 
+import { useStore } from "@/lib/context/StoreContext";
+
 interface ProductClientProps {
   product: Product;
 }
 
 export default function ProductClient({ product }: ProductClientProps) {
+  const { addToCart, toggleWishlist, isInWishlist } = useStore();
   const [selectedSize, setSelectedSize] = useState<string>(product.sizes[0] || "");
   const [isZoomed, setIsZoomed] = useState<number | null>(null);
+  const wishlisted = isInWishlist(product.id);
+
+  const handleAddToCart = () => {
+    addToCart(product, 1, selectedSize);
+  };
 
   const accordionItems = [
     {
@@ -119,11 +127,18 @@ export default function ProductClient({ product }: ProductClientProps) {
 
             {/* Actions */}
             <div className="w-full flex gap-4 mb-12">
-              <button className="flex-1 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors">
+              <button 
+                onClick={handleAddToCart}
+                className="flex-1 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+              >
                 Add to Bag
               </button>
-              <button className="px-6 py-4 border border-glass-border hover:border-pezreq-charcoal transition-colors flex items-center justify-center group">
-                <Heart className="w-5 h-5 text-pezreq-charcoal group-hover:fill-pezreq-charcoal transition-colors" strokeWidth={1} />
+              <button 
+                onClick={() => toggleWishlist(product.id)}
+                className="px-6 py-4 border border-glass-border hover:border-pezreq-charcoal transition-colors flex items-center justify-center group"
+                aria-label="Toggle Wishlist"
+              >
+                <Heart className={`w-5 h-5 text-pezreq-charcoal transition-colors ${wishlisted ? 'fill-pezreq-charcoal' : 'group-hover:fill-pezreq-charcoal'}`} strokeWidth={wishlisted ? 1 : 1.5} />
               </button>
             </div>
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Product } from "@/data/products";
+import { useStore } from "@/lib/context/StoreContext";
 
 interface ProductCardProps {
   product: Product;
@@ -12,6 +13,9 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, priority = false }: ProductCardProps) {
+  const { toggleWishlist, isInWishlist } = useStore();
+  const wishlisted = isInWishlist(product.id);
+
   return (
     <div className="group flex flex-col h-full w-full">
       <Link href={`/product/${product.slug}`} className="block relative focus:outline-none focus:ring-2 focus:ring-pezreq-muted flex-grow">
@@ -46,12 +50,12 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           <button 
             onClick={(e) => {
               e.preventDefault();
-              // Add wishlist logic here
+              toggleWishlist(product.id);
             }}
-            className="absolute top-4 right-4 p-2 bg-pezreq-ivory/50 hover:bg-pezreq-ivory rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 focus:outline-none"
+            className={`absolute top-4 right-4 p-2 bg-pezreq-ivory/80 hover:bg-pezreq-ivory rounded-full transition-all duration-300 z-10 focus:outline-none ${wishlisted ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
             aria-label={`Add ${product.name} to wishlist`}
           >
-            <Heart className="w-4 h-4 text-pezreq-charcoal" strokeWidth={1.5} />
+            <Heart className={`w-4 h-4 text-pezreq-charcoal transition-colors ${wishlisted ? 'fill-pezreq-charcoal' : ''}`} strokeWidth={wishlisted ? 1 : 1.5} />
           </button>
         </div>
         
