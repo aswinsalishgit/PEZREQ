@@ -1,15 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
+  const mousePosRef = useRef({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isDarkBackground, setIsDarkBackground] = useState(false);
+  const lastCheck = useRef(0);
+
+  const checkBackgroundColor = (x: number, y: number) => {
+    const el = document.elementFromPoint(x, y);
+    if (el) {
+      let current: Element | null = el;
+      while (current) {
+        const bgColor = window.getComputedStyle(current).backgroundColor;
+        if (bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
+          const match = bgColor.match(/\d+/g);
+          if (match && match.length >= 3) {
+            const r = parseInt(match[0]);
+            const g = parseInt(match[1]);
+            const b = parseInt(match[2]);
+            const a = match[3] ? parseFloat(match[3]) : 1;
+            
+            if (a > 0.1) {
+              const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+              setIsDarkBackground(luminance < 0.5);
+              return;
+            }
+          }
+        }
+        current = current.parentElement;
+      }
+    }
+  };
 
   useEffect(() => {
-    // Only show custom cursor on devices that support hover (desktop)
     if (!window.matchMedia("(hover: hover)").matches) {
       return;
     }
@@ -18,6 +46,21 @@ export default function CustomCursor() {
 
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      mousePosRef.current = { x: e.clientX, y: e.clientY };
+      
+      const now = Date.now();
+      if (now - lastCheck.current > 50) { // Throttle to 50ms
+        lastCheck.current = now;
+        checkBackgroundColor(e.clientX, e.clientY);
+      }
+    };
+
+    const handleScroll = () => {
+      const now = Date.now();
+      if (now - lastCheck.current > 100) { // Throttle to 100ms on scroll
+        lastCheck.current = now;
+        checkBackgroundColor(mousePosRef.current.x, mousePosRef.current.y);
+      }
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -36,45 +79,72 @@ export default function CustomCursor() {
       }
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
-    window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mousemove", updateMousePosition, { passive: true });
+    window.addEventListener("mouseover", handleMouseOver, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Hide default cursor globally when this component mounts
     document.documentElement.classList.add('hide-cursor');
 
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("scroll", handleScroll);
       document.documentElement.classList.remove('hide-cursor');
     };
   }, []);
 
   if (!isVisible) return null;
 
+  // Droplet styling based on background
+  const dropletBg = isDarkBackground ? "rgba(253, 251, 247, 0.15)" : "rgba(26, 26, 26, 0.1)";
+  const dropletBorder = isDarkBackground ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.1)";
+
   return (
     <>
-      {/* Main Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full mix-blend-difference pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9999] backdrop-blur-md saturate-150"
+        style={{
+          boxShadow: isHovering ? `inset 0 4px 15px ${isDarkBackground ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.1)'}, 0 10px 30px rgba(0,0,0,0.1)` : 'none',
+          border: isHovering ? `1px solid ${dropletBorder}` : 'none',
+        }}
         animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
-          scale: isHovering ? 2.5 : 1,
+          x: mousePosition.x - (isHovering ? 32 : 6),
+          y: mousePosition.y - (isHovering ? 32 : 6),
+          width: isHovering ? 64 : 12,
+          height: isHovering ? 64 : 12,
+          backgroundColor: isHovering ? dropletBg : (isDarkBackground ? "rgba(253, 251, 247, 1)" : "rgba(26, 26, 26, 1)"),
+          borderRadius: isHovering ? [
+            "50% 50% 50% 50% / 50% 50% 50% 50%",
+            "60% 40% 30% 70% / 60% 30% 70% 40%",
+            "40% 60% 70% 30% / 40% 70% 30% 60%",
+            "50% 50% 50% 50% / 50% 50% 50% 50%"
+          ] : "50%",
         }}
         transition={{
           type: "spring",
-          stiffness: 1000,
-          damping: 40,
+          stiffness: 800,
+          damping: 35,
           mass: 0.1,
+          borderRadius: {
+            duration: 3,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "mirror"
+          },
+          backgroundColor: { duration: 0.3 }
         }}
       />
-      {/* Trailing Ring */}
+      
+      {/* Subtle outer ring when NOT hovering */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-white/50 rounded-full mix-blend-difference pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9998]"
+        style={{
+          border: `1px solid ${isDarkBackground ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.2)"}`
+        }}
         animate={{
           x: mousePosition.x - 20,
           y: mousePosition.y - 20,
-          scale: isHovering ? 1.2 : 1,
+          scale: isHovering ? 1.5 : 1,
           opacity: isHovering ? 0 : 1,
         }}
         transition={{
