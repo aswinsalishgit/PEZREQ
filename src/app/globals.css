@@ -78,6 +78,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure interactive elements have pointer cursor */
+a, button, [role="button"] {
+  cursor: pointer;
+}
+
 /* Selection Styling */
 ::selection {
   background-color: var(--color-charcoal);
