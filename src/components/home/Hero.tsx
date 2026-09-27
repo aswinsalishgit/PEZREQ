@@ -3,97 +3,119 @@
 import React, { useRef } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { easings, durations, variants } from "@/lib/design/motion";
+import { easings, durations } from "@/lib/design/motion";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll animations for parallax effect
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  // Parallax effects
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scaleVideo = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
-  const yVideo = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  // Very subtle background scale and content movement on scroll
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  // Motion variants for staggering content
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: durations.slow, 
+        ease: easings.cinematic 
+      } 
+    },
+  };
 
   return (
     <section 
       ref={containerRef} 
-      className="relative h-[95vh] min-h-[600px] w-full overflow-hidden bg-pezreq-charcoal"
-      aria-label="PEZREQ Hero Campaign"
+      className="relative h-[100svh] w-full overflow-hidden bg-pezreq-near-black"
     >
-      {/* Video Background with Parallax */}
+      {/* Background Video with Parallax */}
       <motion.div 
-        className="absolute inset-0 w-full h-full"
-        style={{ scale: scaleVideo, y: yVideo }}
+        style={{ y: backgroundY }}
+        className="absolute inset-0 w-full h-[120%] -top-[10%]"
       >
-        <video 
-          className="absolute inset-0 h-full w-full object-cover object-[center_30%] md:object-center"
-          autoPlay 
-          muted 
-          loop 
+        <video
+          className="absolute inset-0 w-full h-full object-cover object-center lg:object-[center_30%]"
+          autoPlay
+          muted
+          loop
           playsInline
           poster="/pezreq banner.png"
-          preload="auto"
+          preload="metadata"
         >
           <source src="/samplevideo.mp4" type="video/mp4" />
         </video>
-        {/* Cinematic Overlays */}
+        
+        {/* Elegant Overlays */}
         <div className="absolute inset-0 bg-pezreq-near-black/30 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pezreq-near-black/60 via-transparent to-pezreq-near-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-pezreq-near-black/40 via-transparent to-pezreq-near-black/60" />
       </motion.div>
-      
-      {/* Content Container */}
-      <motion.div 
-        className="relative z-20 h-full flex flex-col items-center justify-end pb-32 md:justify-center md:pb-0 text-center px-4 md:px-8"
-        style={{ y: yText, opacity: opacityText }}
-      >
-        <div className="overflow-hidden mb-6">
-          <motion.h1 
-            className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-pezreq-ivory tracking-widest uppercase drop-shadow-xl"
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: durations.slow, ease: easings.cinematic, delay: 0.2 }}
-          >
-            Jewellery, Refined.
-          </motion.h1>
-        </div>
 
-        <motion.div className="overflow-hidden mb-12">
-          <motion.p 
-            className="text-pezreq-ivory/90 text-sm md:text-base tracking-[0.2em] uppercase font-light drop-shadow-md"
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: durations.slow, ease: easings.cinematic, delay: 0.4 }}
-          >
-            Timeless forms. Contemporary expression.
-          </motion.p>
-        </motion.div>
+      {/* Hero Content */}
+      <motion.div 
+        style={{ y: contentY, opacity }}
+        className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-12"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.h2 
+          variants={itemVariants}
+          className="text-micro text-pezreq-ivory/80 mb-6 tracking-[0.3em]"
+        >
+          THE PEZREQ AESTHETIC
+        </motion.h2>
+
+        <motion.h1 
+          variants={itemVariants}
+          className="font-serif text-5xl md:text-7xl lg:text-[7rem] text-pezreq-ivory leading-[0.9] tracking-tight uppercase mb-8 drop-shadow-xl"
+        >
+          Architecture <br className="hidden md:block"/> for the Body.
+        </motion.h1>
+
+        <motion.p 
+          variants={itemVariants}
+          className="text-pezreq-ivory/90 text-sm md:text-base tracking-[0.1em] uppercase mb-12 font-light max-w-lg leading-relaxed"
+        >
+          Timeless forms. Contemporary expression.
+        </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: durations.slow, ease: easings.entrance, delay: 0.8 }}
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10"
         >
-          {/* Primary CTA */}
           <Link 
             href="/collections/signature"
-            className="group flex items-center gap-4 text-pezreq-ivory border-b border-pezreq-ivory/40 pb-2 hover:border-pezreq-ivory transition-colors tracking-widest text-xs uppercase"
+            className="group relative px-8 py-4 bg-pezreq-ivory text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500 overflow-hidden"
           >
-            Explore Collection
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-500 ease-out" />
+            <span className="relative z-10">Explore Collection</span>
           </Link>
           
-          {/* Secondary CTA */}
           <Link 
             href="/about"
-            className="text-pezreq-ivory/70 hover:text-pezreq-ivory transition-colors tracking-widest text-xs uppercase"
+            className="group relative text-pezreq-ivory text-xs tracking-[0.15em] uppercase py-2"
           >
-            Discover PEZREQ
+            <span className="relative z-10">Discover PEZREQ</span>
+            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-pezreq-ivory/30 group-hover:bg-pezreq-ivory transition-colors duration-500" />
           </Link>
         </motion.div>
       </motion.div>
