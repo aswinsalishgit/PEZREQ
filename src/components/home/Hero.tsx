@@ -82,14 +82,14 @@ export default function Hero() {
           variants={itemVariants}
           className="text-micro text-pezreq-ivory/80 mb-6 tracking-[0.3em]"
         >
-          PEZREQ HOUSE
+          THE PEZREQ HOUSE
         </motion.h2>
 
         <motion.h1 
           variants={itemVariants}
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] text-pezreq-ivory leading-[0.95] md:leading-[0.9] tracking-tight uppercase mb-6 md:mb-8 drop-shadow-2xl"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-pezreq-ivory leading-[1.1] md:leading-[1] tracking-tight uppercase mb-6 md:mb-8 drop-shadow-2xl"
         >
-          TIMELESS JEWELLERY <br className="hidden md:block"/> FOR EVERYDAY MOMENTS.
+          TIMELESS JEWELLERY <br /> FOR EVERYDAY MOMENTS.
         </motion.h1>
 
         <motion.p 
