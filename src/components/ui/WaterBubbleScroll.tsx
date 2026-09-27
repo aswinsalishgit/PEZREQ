@@ -26,7 +26,7 @@ export default function WaterBubbleScroll() {
 
   return (
     <motion.div
-      className="fixed right-3 z-[100] pointer-events-none"
+      className="fixed right-3 z-[100] pointer-events-none mix-blend-difference"
       style={{ top: topPosition }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ 
@@ -36,7 +36,7 @@ export default function WaterBubbleScroll() {
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <motion.div
-        className="w-3 h-3 md:w-4 md:h-4 bg-white mix-blend-difference shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+        className="w-4 h-4 md:w-5 md:h-5 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]"
         animate={{
           borderRadius: [
             "50% 50% 50% 50% / 50% 50% 50% 50%",
