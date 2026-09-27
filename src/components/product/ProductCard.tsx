@@ -29,15 +29,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105"
           />
-          {product.hoverImage && (
-            <Image 
-              src={product.hoverImage} 
-              alt={`${product.name} Alternate View`} 
-              fill 
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-            />
-          )}
+          {/* hoverImage disabled per user request: "they dont change on hover" */}
           
           {/* Badges */}
           {product.badge && (
