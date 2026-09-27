@@ -43,7 +43,7 @@ export default function Home() {
       {/* 4. Intro editorial statement */}
       <section className="py-32 px-4 max-w-4xl mx-auto text-center">
         <h3 className="font-serif text-3xl md:text-5xl leading-tight text-pezreq-charcoal text-balance">
-          "We do not simply make jewellery. We sculpt light, space, and material into timeless architecture for the body."
+          &quot;We do not simply make jewellery. We sculpt light, space, and material into timeless architecture for the body.&quot;
         </h3>
         <div className="mt-12 w-px h-24 bg-pezreq-charcoal/20 mx-auto" />
       </section>
