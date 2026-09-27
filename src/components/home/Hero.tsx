@@ -59,7 +59,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          poster="/pezreq banner.png"
+          poster="/pezreq%20banner.png"
           preload="metadata"
         >
           <source src="/samplevideo.mp4" type="video/mp4" />

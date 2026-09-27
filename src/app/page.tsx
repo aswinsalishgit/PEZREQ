@@ -134,7 +134,7 @@ export default function Home() {
           ].map((cat, idx) => (
             <ScrollReveal key={cat.title} delay={idx * 0.1}>
               <Link href={cat.href} className="group relative block aspect-[4/5] md:aspect-square overflow-hidden bg-pezreq-champagne">
-                <Image src={cat.img} alt={cat.title} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105" />
+                <Image src={cat.img} alt={cat.title} fill className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-pezreq-near-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
                 <h4 className="absolute bottom-4 left-4 md:bottom-8 md:left-8 font-serif text-xl md:text-3xl text-pezreq-ivory tracking-wide">{cat.title}</h4>
               </Link>

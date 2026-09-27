@@ -45,7 +45,6 @@ export default function ParallaxImage({
           src={src}
           alt={alt}
           fill
-          sizes="100vw"
           priority={priority}
           className={`object-cover ${className}`}
         />
