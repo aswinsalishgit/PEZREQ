@@ -197,7 +197,7 @@ body {
 
   .liquid-glass:hover::after {
     opacity: 1;
-    animation: glass-shine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: glass-shine 2.5s ease-in-out forwards;
   }
   .liquid-glass-dark {
     position: relative;
@@ -221,7 +221,7 @@ body {
     left: 0;
     width: 60%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transform: translateX(-150%) skewX(-20deg);
     opacity: 0;
     pointer-events: none;
@@ -230,7 +230,7 @@ body {
 
   .liquid-glass-dark:hover::after {
     opacity: 1;
-    animation: glass-shine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: glass-shine 2.5s ease-in-out forwards;
   }
 
   .overlay-dark {
