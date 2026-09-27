@@ -52,15 +52,6 @@ export default function Header() {
   return (
     <>
       <header className={headerClass} onMouseLeave={() => setActiveMenu(null)}>
-        {/* Subtle Announcement Strip (Only visible at top) */}
-        <div 
-          className={`w-full bg-pezreq-charcoal text-pezreq-ivory text-micro py-2 text-center transition-all duration-500 overflow-hidden ${
-            isScrolled ? "h-0 py-0 opacity-0" : "h-auto opacity-100"
-          }`}
-        >
-          Complimentary global shipping on all orders
-        </div>
-
         <div className="container-luxury border-b border-transparent transition-colors duration-500"
              style={{ borderBottomColor: isSolid ? "var(--color-glass-border)" : "transparent" }}>
           
