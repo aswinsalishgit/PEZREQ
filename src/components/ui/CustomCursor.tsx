@@ -102,16 +102,18 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9999] backdrop-blur-sm saturate-150"
+        className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9999]"
         style={{
-          boxShadow: isHovering ? `inset 0 4px 15px ${isDarkBackground ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.1)'}, 0 10px 30px rgba(0,0,0,0.1)` : 'none',
+          boxShadow: isHovering ? `inset 0 4px 10px ${isDarkBackground ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.15)'}, 0 4px 15px rgba(0,0,0,0.1)` : 'none',
           border: isHovering ? `1px solid ${dropletBorder}` : 'none',
+          backdropFilter: isHovering ? 'blur(1px) contrast(120%) brightness(110%) saturate(120%)' : 'none',
+          WebkitBackdropFilter: isHovering ? 'blur(1px) contrast(120%) brightness(110%) saturate(120%)' : 'none',
         }}
         animate={{
-          x: mousePosition.x - (isHovering ? 20 : 6),
-          y: mousePosition.y - (isHovering ? 20 : 6),
-          width: isHovering ? 40 : 12,
-          height: isHovering ? 40 : 12,
+          x: mousePosition.x - (isHovering ? 14 : 6),
+          y: mousePosition.y - (isHovering ? 14 : 6),
+          width: isHovering ? 28 : 12,
+          height: isHovering ? 28 : 12,
           backgroundColor: isHovering ? dropletBg : (isDarkBackground ? "rgba(253, 251, 247, 1)" : "rgba(26, 26, 26, 1)"),
           borderRadius: isHovering ? [
             "50% 50% 50% 50% / 50% 50% 50% 50%",
