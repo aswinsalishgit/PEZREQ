@@ -112,7 +112,7 @@ export default function Footer() {
 
         {/* BOTTOM: Final Statement & Legal */}
         <ScrollReveal type="typography" delay={0.2}>
-          <div className="flex flex-col md:flex-row justify-between items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
             <div>
               <Link href="/" className="inline-block mb-8">
                 <span className="font-serif text-4xl md:text-6xl tracking-widest text-pezreq-ivory hover:text-pezreq-champagne transition-colors">

@@ -121,7 +121,7 @@ body {
    ========================================= */
 @layer utilities {
   .text-display {
-    @apply font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none;
+    @apply font-serif text-4xl md:text-6xl lg:text-8xl tracking-tight leading-none text-balance;
   }
   .text-editorial {
     @apply font-serif text-3xl md:text-5xl leading-tight tracking-normal text-balance;

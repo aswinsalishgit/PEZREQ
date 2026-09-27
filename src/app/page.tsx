@@ -105,11 +105,11 @@ export default function Home() {
       </section>
 
       {/* 6. SHOP BY CATEGORY (Editorial Tiles) */}
-      <section className="py-32 container-luxury">
-        <ScrollReveal>
-          <h3 className="font-serif text-3xl md:text-4xl text-pezreq-charcoal mb-16 text-center">Shop by Category</h3>
+      <section className="py-24 md:py-32 container-luxury">
+        <ScrollReveal type="typography">
+          <h3 className="font-serif text-3xl md:text-4xl text-pezreq-charcoal mb-12 md:mb-16 text-center">Shop by Category</h3>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 gap-4 md:gap-8">
           {[
             { title: "Rings", href: "/shop/rings", img: "/placeholder.jpg" },
             { title: "Necklaces", href: "/shop/necklaces", img: "/placeholder.jpg" },
@@ -120,7 +120,7 @@ export default function Home() {
               <Link href={cat.href} className="group relative block aspect-[4/5] md:aspect-square overflow-hidden bg-pezreq-champagne">
                 <Image src={cat.img} alt={cat.title} fill className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-pezreq-near-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-                <h4 className="absolute bottom-8 left-8 font-serif text-3xl text-pezreq-ivory tracking-wide">{cat.title}</h4>
+                <h4 className="absolute bottom-4 left-4 md:bottom-8 md:left-8 font-serif text-xl md:text-3xl text-pezreq-ivory tracking-wide">{cat.title}</h4>
               </Link>
             </ScrollReveal>
           ))}

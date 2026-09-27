@@ -77,7 +77,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               >
                 <Link
                   href={link.href}
-                  className="text-display !text-4xl text-pezreq-charcoal hover:text-pezreq-muted transition-colors focus:outline-none"
+                  className="block py-4 text-display text-4xl text-pezreq-charcoal hover:text-pezreq-muted transition-colors focus:outline-none"
                   onClick={onClose}
                 >
                   {link.name}
@@ -89,13 +89,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: durations.base }}
-              className="mt-12 pt-12 border-t border-glass-border grid grid-cols-2 gap-6"
+              className="mt-12 pt-12 border-t border-glass-border grid grid-cols-2 gap-y-8 gap-x-6"
             >
               {mobileUtilities.map((util) => (
                 <Link
                   key={util.name}
                   href={util.href}
-                  className="text-nav text-pezreq-charcoal hover:opacity-70 transition-opacity"
+                  className="block py-2 text-nav text-pezreq-charcoal hover:opacity-70 transition-opacity"
                   onClick={onClose}
                 >
                   {util.name}

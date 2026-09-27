@@ -22,7 +22,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: idx * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="min-w-[280px] w-[280px] md:min-w-[360px] md:w-[360px] snap-center flex-shrink-0"
+            className="w-[75vw] max-w-[320px] md:w-[360px] snap-start flex-shrink-0"
           >
             <ProductCard product={product} />
           </motion.div>

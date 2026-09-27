@@ -73,7 +73,7 @@ export default function Hero() {
       {/* Hero Content */}
       <motion.div 
         style={{ y: contentY, opacity }}
-        className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto mt-12"
+        className="relative z-20 h-full flex flex-col items-center justify-end md:justify-center pb-24 md:pb-0 text-center px-6 max-w-5xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         animate="show"
@@ -87,35 +87,35 @@ export default function Hero() {
 
         <motion.h1 
           variants={itemVariants}
-          className="font-serif text-5xl md:text-7xl lg:text-[7rem] text-pezreq-ivory leading-[0.9] tracking-tight uppercase mb-8 drop-shadow-xl"
+          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] text-pezreq-ivory leading-[0.95] md:leading-[0.9] tracking-tight uppercase mb-6 md:mb-8 drop-shadow-2xl"
         >
           Architecture <br className="hidden md:block"/> for the Body.
         </motion.h1>
 
         <motion.p 
           variants={itemVariants}
-          className="text-pezreq-ivory/90 text-sm md:text-base tracking-[0.1em] uppercase mb-12 font-light max-w-lg leading-relaxed"
+          className="text-pezreq-ivory/90 text-xs sm:text-sm md:text-base tracking-[0.1em] uppercase mb-10 md:mb-12 font-light max-w-lg leading-relaxed drop-shadow-md"
         >
           Timeless forms. Contemporary expression.
         </motion.p>
 
         <motion.div 
           variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center gap-6 sm:gap-10"
+          className="flex flex-col w-full sm:w-auto sm:flex-row items-center gap-4 sm:gap-10"
         >
           <Link 
             href="/collections/signature"
-            className="group relative px-8 py-4 bg-pezreq-ivory text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500 overflow-hidden"
+            className="group relative w-full sm:w-auto px-8 py-4 bg-pezreq-ivory text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500 overflow-hidden"
           >
-            <span className="relative z-10">Explore Collection</span>
+            <span className="relative z-10 block text-center">Explore Collection</span>
           </Link>
           
           <Link 
             href="/about"
-            className="group relative text-pezreq-ivory text-xs tracking-[0.15em] uppercase py-2"
+            className="group relative w-full sm:w-auto text-pezreq-ivory text-xs tracking-[0.15em] uppercase py-4 sm:py-2 text-center"
           >
             <span className="relative z-10">Discover PEZREQ</span>
-            <span className="absolute bottom-0 left-0 w-full h-[1px] bg-pezreq-ivory/30 group-hover:bg-pezreq-ivory transition-colors duration-500" />
+            <span className="hidden sm:block absolute bottom-0 left-0 w-full h-[1px] bg-pezreq-ivory/30 group-hover:bg-pezreq-ivory transition-colors duration-500" />
           </Link>
         </motion.div>
       </motion.div>

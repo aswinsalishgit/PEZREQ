@@ -60,16 +60,16 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         </div>
         
         {/* Text Info */}
-        <div className="flex justify-between items-start mt-auto">
-          <div className="flex flex-col">
-            <h4 className="text-body font-normal text-pezreq-near-black mb-1 transition-colors group-hover:text-pezreq-muted">
+        <div className="flex flex-col mt-auto pt-2">
+          <div className="flex justify-between items-start gap-4">
+            <h4 className="text-sm md:text-body font-normal text-pezreq-near-black mb-1 transition-colors group-hover:text-pezreq-muted line-clamp-2">
               {product.name}
             </h4>
-            <span className="text-meta">{product.materials[0]}</span>
+            <span className="text-sm md:text-body font-medium text-pezreq-charcoal shrink-0">
+              {new Intl.NumberFormat("en-US", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
+            </span>
           </div>
-          <span className="text-body font-medium text-pezreq-charcoal ml-4 shrink-0">
-            {new Intl.NumberFormat("en-US", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
-          </span>
+          <span className="text-meta text-xs md:text-sm">{product.materials[0]}</span>
         </div>
       </Link>
     </div>
