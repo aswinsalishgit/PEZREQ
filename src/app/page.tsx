@@ -12,8 +12,24 @@ import ParallaxImage from "@/components/ui/ParallaxImage";
 export default function Home() {
   const signatureProducts = products.filter(p => p.bestSeller || p.newArrival);
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PEZREQ",
+    "url": "https://pezreq.com",
+    "logo": "https://pezreq.com/pezreq%20logo.png",
+    "description": "PEZREQ is a luxury jewellery house offering timeless, architectural, and sophisticated pieces.",
+    "sameAs": [
+      "https://instagram.com/pezreq_house"
+    ]
+  };
+
   return (
     <main className="flex min-h-screen flex-col bg-background selection:bg-pezreq-charcoal selection:text-pezreq-ivory">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Header />
       
       {/* 1. HERO */}

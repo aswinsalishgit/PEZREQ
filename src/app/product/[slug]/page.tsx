@@ -48,8 +48,37 @@ export default async function ProductPage(props: { params: Promise<{ slug: strin
     .filter((p) => p.id !== product.id && (p.category === product.category || p.collection === product.collection))
     .slice(0, 4);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "image": product.images,
+    "description": product.description,
+    "sku": product.id,
+    "brand": {
+      "@type": "Brand",
+      "name": "PEZREQ"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://pezreq.com/product/${product.slug}`,
+      "priceCurrency": product.currency,
+      "price": product.price,
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "PEZREQ"
+      }
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col bg-background selection:bg-pezreq-charcoal selection:text-pezreq-ivory">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <Header />
       
       {/* Product Detail Interactive Shell */}

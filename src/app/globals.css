@@ -89,6 +89,12 @@ body {
   color: var(--color-ivory);
 }
 
+/* Accessibility Focus */
+:focus-visible {
+  outline: 2px solid var(--color-muted-neutral);
+  outline-offset: 2px;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 5px;
