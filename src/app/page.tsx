@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
@@ -9,36 +10,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-background">
       <Header />
 
-      {/* 3. Full-screen hero campaign */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 bg-pezreq-charcoal/20 z-10" /> {/* Elegant overlay */}
-        <video 
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          poster="/pezreq banner.png"
-        >
-          <source src="/samplevideo.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
-          <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-background tracking-widest uppercase mb-6 drop-shadow-lg">
-            Elegance in Form
-          </h2>
-          <p className="text-background/90 text-sm md:text-base tracking-[0.2em] uppercase mb-10 max-w-lg font-light">
-            Architectural luxury for the modern era
-          </p>
-          <Link 
-            href="/collections/signature"
-            className="group flex items-center gap-4 text-background border-b border-background/50 pb-2 hover:border-background transition-colors tracking-widest text-sm uppercase"
-          >
-            Explore the Campaign
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-          </Link>
-        </div>
-      </section>
+      <Hero />
 
       {/* 4. Intro editorial statement */}
       <section className="py-32 px-4 max-w-4xl mx-auto text-center">
