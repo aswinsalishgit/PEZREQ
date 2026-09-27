@@ -11,7 +11,7 @@ const categories = [
     desc: "Sculptural forms for the hands.",
     colSpan: "col-span-1 md:col-span-2",
     theme: "dark",
-    img: "https://images.unsplash.com/photo-1605100804763-247f66150ce8?q=80&w=2000&auto=format&fit=crop"
+    img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop"
   },
   { 
     title: "Necklaces", 
@@ -19,7 +19,7 @@ const categories = [
     desc: "Fluid geometry.",
     colSpan: "col-span-1",
     theme: "light",
-    img: "https://images.unsplash.com/photo-1599643478514-4a4e09f52f5e?q=80&w=2000&auto=format&fit=crop"
+    img: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2000&auto=format&fit=crop"
   },
   { 
     title: "Bracelets", 
