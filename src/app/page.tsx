@@ -112,7 +112,7 @@ export default function Home() {
             <h2 className="text-display text-pezreq-ivory mb-8 drop-shadow-lg">Elevated Daily.</h2>
             <Link 
               href="/collections/everyday"
-              className="inline-block px-10 py-4 bg-pezreq-ivory text-pezreq-charcoal text-nav hover:bg-pezreq-champagne transition-colors"
+              className="inline-block px-10 py-4 liquid-glass text-pezreq-charcoal text-nav transition-colors"
             >
               Shop The Everyday Edition
             </Link>

@@ -36,7 +36,7 @@ export default function WishlistPage() {
             <p className="text-body text-pezreq-charcoal/70 mb-8">Your wishlist is currently empty.</p>
             <Link 
               href="/shop"
-              className="inline-block px-10 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+              className="inline-block px-10 py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
             >
               Explore Collections
             </Link>

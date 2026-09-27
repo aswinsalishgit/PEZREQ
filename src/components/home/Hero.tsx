@@ -105,17 +105,16 @@ export default function Hero() {
         >
           <Link 
             href="/collections/signature"
-            className="group relative w-full sm:w-auto px-8 py-4 bg-pezreq-ivory text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500 overflow-hidden"
+            className="group relative w-full sm:w-auto px-8 py-4 liquid-glass text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500"
           >
             <span className="relative z-10 block text-center">Explore Collection</span>
           </Link>
           
           <Link 
             href="/about"
-            className="group relative w-full sm:w-auto text-pezreq-ivory text-xs tracking-[0.15em] uppercase py-4 sm:py-2 text-center"
+            className="group relative w-full sm:w-auto px-8 py-4 liquid-glass-dark text-pezreq-ivory text-xs tracking-[0.15em] uppercase transition-colors duration-500"
           >
-            <span className="relative z-10">Discover PEZREQ</span>
-            <span className="hidden sm:block absolute bottom-0 left-0 w-full h-[1px] bg-pezreq-ivory/30 group-hover:bg-pezreq-ivory transition-colors duration-500" />
+            <span className="relative z-10 block text-center">Discover PEZREQ</span>
           </Link>
         </motion.div>
       </motion.div>

@@ -149,7 +149,7 @@ export default function ContactPage() {
 
                   <button 
                     type="submit" 
-                    className="w-full md:w-auto px-12 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav hover:bg-pezreq-near-black transition-colors"
+                    className="w-full md:w-auto px-12 py-4 liquid-glass-dark text-pezreq-ivory text-nav hover:bg-pezreq-near-black transition-colors"
                   >
                     Submit Enquiry
                   </button>

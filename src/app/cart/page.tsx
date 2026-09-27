@@ -23,7 +23,7 @@ export default function CartPage() {
             <p className="text-body text-pezreq-charcoal/70 mb-8">Your bag is currently empty.</p>
             <Link 
               href="/shop"
-              className="inline-block px-10 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+              className="inline-block px-10 py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
             >
               Explore Collections
             </Link>
@@ -118,7 +118,7 @@ export default function CartPage() {
                   <span>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(cartTotal)}</span>
                 </div>
                 
-                <button className="w-full py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors mb-4">
+                <button className="w-full py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors mb-4">
                   Proceed to Checkout
                 </button>
                 <p className="text-meta text-pezreq-muted text-center">

@@ -142,7 +142,7 @@ export default function CartDrawer() {
                 <Link 
                   href="/cart"
                   onClick={() => setIsCartOpen(false)}
-                  className="block w-full py-4 text-center bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+                  className="block w-full py-4 text-center liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
                 >
                   Proceed to Checkout
                 </Link>

@@ -22,7 +22,7 @@ export default function NotFound() {
           </p>
           <Link 
             href="/shop"
-            className="inline-block px-12 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+            className="inline-block px-12 py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
           >
             Discover Collections
           </Link>

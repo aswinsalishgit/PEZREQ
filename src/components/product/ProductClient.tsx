@@ -129,7 +129,7 @@ export default function ProductClient({ product }: ProductClientProps) {
             <div className="w-full flex gap-4 mb-12">
               <button 
                 onClick={handleAddToCart}
-                className="flex-1 py-4 bg-pezreq-charcoal text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
+                className="flex-1 py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors"
               >
                 Add to Bag
               </button>

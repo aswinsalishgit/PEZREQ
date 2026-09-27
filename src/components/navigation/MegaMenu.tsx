@@ -74,7 +74,7 @@ export default function MegaMenu({ activeMenu, onMouseEnter, onMouseLeave }: Meg
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: durations.fast, ease: easings.micro }}
-          className="absolute left-0 w-full top-full bg-pezreq-ivory/95 backdrop-blur-xl border-b border-glass-border shadow-soft overflow-hidden"
+          className="absolute left-0 w-full top-full liquid-glass overflow-hidden"
           onMouseEnter={() => onMouseEnter(activeMenu)}
           onMouseLeave={onMouseLeave}
           role="dialog"

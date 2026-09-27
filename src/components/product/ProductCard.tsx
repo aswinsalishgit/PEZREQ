@@ -41,7 +41,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
           
           {/* Badges */}
           {product.badge && (
-            <span className="absolute top-4 left-4 bg-pezreq-ivory text-pezreq-charcoal text-micro px-2 py-1 tracking-widest z-10">
+            <span className="absolute top-4 left-4 liquid-glass text-pezreq-charcoal text-micro px-2 py-1 tracking-widest z-10">
               {product.badge}
             </span>
           )}
