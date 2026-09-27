@@ -96,7 +96,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-pezreq-ivory/90 text-xs sm:text-sm md:text-base tracking-[0.1em] uppercase mb-10 md:mb-12 font-light max-w-lg leading-relaxed drop-shadow-md"
         >
-          Timeless forms. Contemporary expression.
+          Find jewellery for every occasion.
         </motion.p>
 
         <motion.div 
