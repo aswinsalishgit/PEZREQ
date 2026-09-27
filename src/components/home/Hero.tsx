@@ -1,12 +1,34 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { easings, durations } from "@/lib/design/motion";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const video0Ref = useRef<HTMLVideoElement>(null);
+  const video1Ref = useRef<HTMLVideoElement>(null);
+  const [activeVideo, setActiveVideo] = useState<0 | 1>(0);
+  
+  const crossfadeDuration = 2; // 2 seconds crossfade for a luxurious dissolve
+
+  const handleTimeUpdate = (index: 0 | 1) => {
+    const video = index === 0 ? video0Ref.current : video1Ref.current;
+    if (!video) return;
+    
+    // When getting close to the end, prepare to switch
+    if (activeVideo === index && video.duration && video.currentTime >= video.duration - crossfadeDuration) {
+      const nextIndex = index === 0 ? 1 : 0;
+      const nextVideo = nextIndex === 0 ? video0Ref.current : video1Ref.current;
+      
+      if (nextVideo) {
+        nextVideo.currentTime = 0;
+        nextVideo.play().catch(() => {});
+        setActiveVideo(nextIndex);
+      }
+    }
+  };
 
   // Scroll animations for parallax effect
   const { scrollYProgress } = useScroll({
@@ -51,16 +73,28 @@ export default function Hero() {
       {/* Background Video with Parallax */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 w-full h-[120%] -top-[10%]"
+        className="absolute inset-0 w-full h-[120%] -top-[10%] bg-pezreq-charcoal"
       >
         <video
-          className="absolute inset-0 w-full h-full object-cover object-center lg:object-[center_30%]"
+          ref={video0Ref}
+          className={`absolute inset-0 w-full h-full object-cover object-center lg:object-[center_30%] transition-opacity duration-[2000ms] ease-in-out ${activeVideo === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
           autoPlay
           muted
-          loop
           playsInline
           poster="/pezreq%20banner.png"
           preload="metadata"
+          onTimeUpdate={() => handleTimeUpdate(0)}
+        >
+          <source src="/samplevideo.mp4" type="video/mp4" />
+        </video>
+        <video
+          ref={video1Ref}
+          className={`absolute inset-0 w-full h-full object-cover object-center lg:object-[center_30%] transition-opacity duration-[2000ms] ease-in-out ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          muted
+          playsInline
+          poster="/pezreq%20banner.png"
+          preload="auto"
+          onTimeUpdate={() => handleTimeUpdate(1)}
         >
           <source src="/samplevideo.mp4" type="video/mp4" />
         </video>
