@@ -52,8 +52,7 @@ export default function Header() {
   return (
     <>
       <header className={headerClass} onMouseLeave={() => setActiveMenu(null)}>
-        <div className="container-luxury border-b border-transparent transition-colors duration-500"
-             style={{ borderBottomColor: isSolid ? "var(--color-glass-border)" : "transparent" }}>
+        <div className="container-luxury transition-colors duration-500">
           
           <div className="flex justify-between items-center h-20">
             
