@@ -1,84 +1,140 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Footer() {
   return (
-    <footer className="bg-pezreq-charcoal text-background pt-24 pb-12 border-t border-glass-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
-          
-          {/* Brand & Newsletter */}
-          <div className="lg:col-span-2 flex flex-col justify-between">
+    <footer className="bg-pezreq-charcoal text-pezreq-ivory pt-24 pb-12 border-t border-glass-border">
+      <div className="container-luxury">
+        
+        {/* TOP: Newsletter / Private Client Invitation */}
+        <div className="mb-24 md:mb-32 max-w-3xl">
+          <ScrollReveal>
+            <h3 className="font-serif text-3xl md:text-5xl text-pezreq-ivory mb-6 leading-tight">
+              An invitation to the <br className="hidden md:block" /> private client list.
+            </h3>
+            <p className="text-body text-pezreq-ivory/70 mb-10 max-w-md">
+              Receive privileged access to new collections, bespoke commissions, and private editorial insights.
+            </p>
+            <form className="relative max-w-md flex items-end">
+              <input 
+                type="email" 
+                placeholder="Email Address" 
+                className="w-full bg-transparent border-b border-pezreq-ivory/30 py-3 pl-0 pr-10 text-sm focus:outline-none focus:border-pezreq-ivory transition-colors placeholder:text-pezreq-ivory/40"
+                required
+              />
+              <button type="submit" className="absolute right-0 bottom-3 p-2 hover:translate-x-1 transition-transform group">
+                <ArrowRight className="h-5 w-5 text-pezreq-ivory/70 group-hover:text-pezreq-ivory transition-colors" />
+              </button>
+            </form>
+          </ScrollReveal>
+        </div>
+
+        {/* MIDDLE: Links */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 mb-24 md:mb-32">
+          <ScrollReveal delay={0.1}>
+            <h4 className="text-micro text-pezreq-ivory/50 mb-8">SHOP</h4>
+            <ul className="space-y-4">
+              {["Rings", "Necklaces", "Bracelets", "Earrings", "All Jewellery"].map((link) => (
+                <li key={link}>
+                  <Link 
+                    href={link === "All Jewellery" ? "/shop" : `/shop/${link.toLowerCase()}`}
+                    className="text-sm text-pezreq-ivory/80 hover:text-pezreq-ivory link-underline pb-1 transition-colors block w-fit"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <h4 className="text-micro text-pezreq-ivory/50 mb-8">EXPLORE</h4>
+            <ul className="space-y-4">
+              {["Collections", "About", "Journal", "Contact"].map((link) => (
+                <li key={link}>
+                  <Link 
+                    href={`/${link.toLowerCase()}`}
+                    className="text-sm text-pezreq-ivory/80 hover:text-pezreq-ivory link-underline pb-1 transition-colors block w-fit"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <h4 className="text-micro text-pezreq-ivory/50 mb-8">SERVICES</h4>
+            <ul className="space-y-4">
+              {[
+                { name: "Bespoke Consultation", href: "/contact" },
+                { name: "Jewellery Care", href: "/care" },
+                { name: "Shipping", href: "/shipping" },
+                { name: "Returns", href: "/returns" },
+                { name: "FAQs", href: "/faqs" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-sm text-pezreq-ivory/80 hover:text-pezreq-ivory link-underline pb-1 transition-colors block w-fit"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.4}>
+            <h4 className="text-micro text-pezreq-ivory/50 mb-8">FOLLOW</h4>
+            <ul className="space-y-4">
+              {[
+                { name: "Instagram", href: "https://instagram.com" },
+                { name: "Pinterest", href: "https://pinterest.com" },
+                { name: "WhatsApp", href: "https://wa.me/" },
+                { name: "Email", href: "mailto:concierge@pezreq.com" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <a 
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-pezreq-ivory/80 hover:text-pezreq-ivory link-underline pb-1 transition-colors block w-fit"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </div>
+
+        {/* BOTTOM: Final Statement & Legal */}
+        <ScrollReveal type="typography" delay={0.2}>
+          <div className="flex flex-col md:flex-row justify-between items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
             <div>
-              <h2 className="font-serif text-3xl tracking-widest mb-6">PEZREQ</h2>
-              <p className="text-background/70 max-w-sm text-sm leading-relaxed mb-8">
-                A luxury jewellery house crafting architectural and timeless pieces for the modern aesthetic.
+              <Link href="/" className="inline-block mb-8">
+                <span className="font-serif text-4xl md:text-6xl tracking-widest text-pezreq-ivory hover:text-pezreq-champagne transition-colors">
+                  PEZREQ
+                </span>
+              </Link>
+              <p className="text-body max-w-sm text-pezreq-ivory/60 italic font-serif">
+                Shaping the void. Emboldening the form. <br />
+                Crafted for those who understand restraint.
               </p>
             </div>
-            
-            <div className="max-w-md">
-              <h3 className="text-xs tracking-widest uppercase mb-4 text-background/90">Join the Private World</h3>
-              <form className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Email Address" 
-                  className="w-full bg-transparent border-b border-background/30 py-3 pl-0 pr-10 text-sm focus:outline-none focus:border-background transition-colors placeholder:text-background/40"
-                  required
-                />
-                <button type="submit" className="absolute right-0 top-1/2 -translate-y-1/2 p-2 hover:opacity-70 transition-opacity">
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
+
+            <div className="flex flex-col md:items-end gap-6 text-xs text-pezreq-ivory/50">
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <Link href="/privacy" className="hover:text-pezreq-ivory transition-colors">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-pezreq-ivory transition-colors">Terms of Service</Link>
+                <Link href="/accessibility" className="hover:text-pezreq-ivory transition-colors">Accessibility</Link>
+              </div>
+              <p>© {new Date().getFullYear()} PEZREQ House. All rights reserved.</p>
             </div>
           </div>
-
-          {/* Links Column 1 */}
-          <div>
-            <h3 className="text-xs tracking-widest uppercase mb-6 text-background/60">Explore</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/shop" className="text-sm text-background/80 hover:text-background transition-colors">All Jewellery</Link>
-              </li>
-              <li>
-                <Link href="/collections" className="text-sm text-background/80 hover:text-background transition-colors">Collections</Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm text-background/80 hover:text-background transition-colors">Our Story</Link>
-              </li>
-              <li>
-                <Link href="/journal" className="text-sm text-background/80 hover:text-background transition-colors">Journal</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Links Column 2 */}
-          <div>
-            <h3 className="text-xs tracking-widest uppercase mb-6 text-background/60">Client Care</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/contact" className="text-sm text-background/80 hover:text-background transition-colors">Contact Us</Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-background/80 hover:text-background transition-colors">Bespoke Consultation</Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-background/80 hover:text-background transition-colors">Shipping & Returns</Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-background/80 hover:text-background transition-colors">Care Guide</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-background/50">
-          <p>© {new Date().getFullYear()} PEZREQ. All rights reserved.</p>
-          <div className="flex space-x-6">
-            <Link href="#" className="hover:text-background transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-background transition-colors">Terms of Service</Link>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </footer>
   );

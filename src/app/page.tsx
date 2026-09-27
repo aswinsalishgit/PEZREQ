@@ -188,48 +188,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. SERVICE PROMISE & 11. NEWSLETTER */}
-      <section className="border-t border-glass-border">
-        {/* Service Strip */}
-        <div className="border-b border-glass-border">
-          <div className="container-luxury py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            {[
-              { title: "Bespoke Consultation", desc: "Private appointments" },
-              { title: "Secure Delivery", desc: "Complimentary global shipping" },
-              { title: "Jewellery Care", desc: "Lifetime maintenance" },
-              { title: "Personal Assistance", desc: "Dedicated advisors" },
-            ].map((service, idx) => (
-              <div key={idx} className="flex flex-col items-center">
+      {/* 10. SERVICE PROMISE */}
+      <section className="border-t border-glass-border bg-pezreq-warm-white">
+        <div className="container-luxury py-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+          {[
+            { title: "Bespoke Consultation", desc: "Private appointments" },
+            { title: "Secure Delivery", desc: "Complimentary global shipping" },
+            { title: "Jewellery Care", desc: "Lifetime maintenance" },
+            { title: "Personal Assistance", desc: "Dedicated advisors" },
+          ].map((service, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.1}>
+              <div className="flex flex-col items-center">
                 <span className="font-serif text-2xl text-pezreq-charcoal mb-4">0{idx + 1}</span>
                 <h5 className="text-nav mb-2">{service.title}</h5>
                 <p className="text-meta">{service.desc}</p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="py-32 text-center px-4">
-          <ScrollReveal>
-            <h3 className="font-serif text-3xl md:text-5xl text-pezreq-charcoal mb-6">Enter the PEZREQ World</h3>
-            <p className="text-body mb-10 max-w-md mx-auto">
-              Subscribe to receive exclusive access to new collections, private events, and editorial content.
-            </p>
-            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="flex-1 bg-transparent border-b border-pezreq-charcoal/30 py-3 px-0 focus:outline-none focus:border-pezreq-charcoal transition-colors placeholder:text-pezreq-charcoal/40 text-sm"
-                required
-              />
-              <button 
-                type="submit" 
-                className="px-8 py-3 bg-pezreq-charcoal text-pezreq-ivory text-nav hover:bg-pezreq-near-black transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </ScrollReveal>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
