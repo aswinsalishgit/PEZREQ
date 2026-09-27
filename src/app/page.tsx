@@ -35,16 +35,31 @@ export default function Home() {
       {/* 1. HERO */}
       <Hero />
 
-      {/* 2. BRAND STATEMENT */}
-      <section className="py-32 md:py-48 px-4 sm:px-8 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <ScrollReveal type="typography">
-          <h2 className="text-editorial text-pezreq-charcoal mb-12">
-            &quot;Jewellery shaped by restraint, material, and form.&quot;
-          </h2>
-        </ScrollReveal>
-        <ScrollReveal delay={0.2}>
-          <div className="w-px h-24 bg-pezreq-charcoal/20 mx-auto" />
-        </ScrollReveal>
+      {/* 2. CATEGORY TILES */}
+      <section className="w-full bg-pezreq-charcoal">
+        <div className="grid grid-cols-2 md:grid-cols-4 w-full h-[60vh] md:h-[80vh]">
+          {[
+            { title: "Rings", href: "/shop/rings", img: "/placeholder.jpg" },
+            { title: "Necklaces", href: "/shop/necklaces", img: "/placeholder.jpg" },
+            { title: "Bracelets", href: "/shop/bracelets", img: "/placeholder.jpg" },
+            { title: "Earrings", href: "/shop/earrings", img: "/placeholder.jpg" },
+          ].map((cat, idx) => (
+            <Link key={cat.title} href={cat.href} className="group relative block w-full h-full overflow-hidden border-r border-b md:border-b-0 border-white/10 last:border-r-0">
+              <Image 
+                src={cat.img} 
+                alt={cat.title} 
+                fill 
+                className="object-cover opacity-50 grayscale transition-all duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-110 group-hover:opacity-90 group-hover:grayscale-0" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <h3 className="font-serif text-2xl md:text-3xl text-pezreq-ivory tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity text-center">
+                  {cat.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* 3. FEATURED COLLECTION (Asymmetrical) */}
@@ -120,28 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. SHOP BY CATEGORY (Editorial Tiles) */}
-      <section className="py-24 md:py-32 container-luxury">
-        <ScrollReveal type="typography">
-          <h3 className="font-serif text-3xl md:text-4xl text-pezreq-charcoal mb-12 md:mb-16 text-center">Shop by Category</h3>
-        </ScrollReveal>
-        <div className="grid grid-cols-2 gap-4 md:gap-8">
-          {[
-            { title: "Rings", href: "/shop/rings", img: "/placeholder.jpg" },
-            { title: "Necklaces", href: "/shop/necklaces", img: "/placeholder.jpg" },
-            { title: "Bracelets", href: "/shop/bracelets", img: "/placeholder.jpg" },
-            { title: "Earrings", href: "/shop/earrings", img: "/placeholder.jpg" },
-          ].map((cat, idx) => (
-            <ScrollReveal key={cat.title} delay={idx * 0.1}>
-              <Link href={cat.href} className="group relative block aspect-[4/5] md:aspect-square overflow-hidden bg-pezreq-champagne">
-                <Image src={cat.img} alt={cat.title} fill className="object-cover transition-transform duration-[2s] ease-[0.16,1,0.3,1] group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-pezreq-near-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-                <h4 className="absolute bottom-4 left-4 md:bottom-8 md:left-8 font-serif text-xl md:text-3xl text-pezreq-ivory tracking-wide">{cat.title}</h4>
-              </Link>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
+
 
       {/* 7. CRAFTSMANSHIP (Storytelling) */}
       <section className="py-24 md:py-32 bg-pezreq-charcoal text-pezreq-ivory">
