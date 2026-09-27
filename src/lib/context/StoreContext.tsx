@@ -43,11 +43,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const savedCart = localStorage.getItem("pezreq_cart");
-      // eslint-disable-next-line
       if (savedCart) setCart(JSON.parse(savedCart));
       
       const savedWishlist = localStorage.getItem("pezreq_wishlist");
-      // eslint-disable-next-line
       if (savedWishlist) setWishlist(JSON.parse(savedWishlist));
     } catch {
       console.warn("Could not load local storage data");
