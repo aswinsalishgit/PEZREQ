@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-background">
-      <Navbar />
+      <Header />
 
       {/* 3. Full-screen hero campaign */}
       <section className="relative h-screen w-full overflow-hidden">

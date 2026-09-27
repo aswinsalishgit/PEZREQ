@@ -8,13 +8,13 @@
 // Custom Easings
 export const easings = {
   // Ultra-smooth, cinematic feel for large layout transitions
-  cinematic: [0.16, 1, 0.3, 1],
+  cinematic: [0.16, 1, 0.3, 1] as const,
   // Snappy but smooth for micro-interactions (hover, active states)
-  micro: [0.25, 0.1, 0.25, 1],
+  micro: [0.25, 0.1, 0.25, 1] as const,
   // Graceful entrance, slight delay at the start
-  entrance: [0.21, 0.47, 0.32, 0.98],
+  entrance: [0.21, 0.47, 0.32, 0.98] as const,
   // Elegant exit
-  exit: [0.82, 0.085, 0.395, 0.895],
+  exit: [0.82, 0.085, 0.395, 0.895] as const,
 };
 
 // Durations (in seconds for Framer Motion)
