@@ -8,31 +8,31 @@ export type Collection = {
 
 export const collections: Collection[] = [
   {
-    id: "c1",
+    id: "col_signature",
     slug: "signature",
     name: "Signature",
     description: "Our defining aesthetic. Bold, architectural, and timeless pieces designed to be the foundation of your collection.",
     image: "/placeholder-collection.jpg",
   },
   {
-    id: "c2",
-    slug: "new-arrivals",
-    name: "New Arrivals",
-    description: "The latest expressions of our design philosophy, featuring new forms and unexpected material combinations.",
+    id: "col_contour",
+    slug: "contour",
+    name: "Contour",
+    description: "A study in fluidity. Sculpted to trace the natural lines of the body.",
     image: "/placeholder-collection.jpg",
   },
   {
-    id: "c3",
+    id: "col_noir",
+    slug: "noir",
+    name: "Noir",
+    description: "The interplay of light and shadow, featuring black rhodium and diamonds.",
+    image: "/placeholder-collection.jpg",
+  },
+  {
+    id: "col_everyday",
     slug: "everyday",
-    name: "Everyday Essentials",
-    description: "Refined pieces crafted for daily wear. Subtle luxury that seamlessly integrates into your life.",
-    image: "/placeholder-collection.jpg",
-  },
-  {
-    id: "c4",
-    slug: "occasion",
-    name: "Special Occasion",
-    description: "Extraordinary designs and rare gemstones for life's most memorable moments.",
+    name: "Everyday Edition",
+    description: "Refined essentials crafted for daily wear. Subtle luxury that seamlessly integrates into your life.",
     image: "/placeholder-collection.jpg",
   }
 ];
