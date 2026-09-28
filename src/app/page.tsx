@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ProductCarousel from "@/components/product/ProductCarousel";
+import JournalCarousel from "@/components/journal/JournalCarousel";
 import { products } from "@/data/products";
 import { journalEntries } from "@/data/journal";
 import { ArrowRight } from "lucide-react";
@@ -130,28 +131,7 @@ export default function Home() {
             </Link>
           </div>
         </ScrollReveal>
-        <div className="flex md:grid flex-nowrap overflow-x-auto md:overflow-x-visible md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0 pb-4 md:pb-0">
-          {journalEntries.slice(0, 3).map((post, idx) => (
-            <ScrollReveal 
-              key={idx} 
-              delay={idx * 0.1}
-              className="w-[75vw] sm:w-[60vw] md:w-auto flex-shrink-0 snap-start"
-            >
-              <Link href={`/journal/${post.slug}`} className="group block">
-                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden">
-                  <Image src={post.images[0]} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                </div>
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-micro uppercase">{post.category}</span>
-                  <span className="text-meta">{post.date}</span>
-                </div>
-                <h4 className="font-serif text-xl text-pezreq-charcoal leading-snug group-hover:text-pezreq-muted transition-colors">
-                  {post.title}
-                </h4>
-              </Link>
-            </ScrollReveal>
-          ))}
-        </div>
+        <JournalCarousel entries={journalEntries.slice(0, 3)} />
       </section>
 
       {/* 10. SERVICE PROMISE */}
