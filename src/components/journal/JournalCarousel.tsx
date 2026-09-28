@@ -42,7 +42,7 @@ export default function JournalCarousel({ entries }: JournalCarouselProps) {
       <div 
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-4 md:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar scroll-smooth md:grid md:grid-cols-3 md:overflow-x-visible md:pb-0"
+        className="flex gap-4 md:gap-8 overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar scroll-smooth md:grid md:grid-cols-3 md:overflow-x-visible md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 md:mx-0 md:px-0"
       >
         {entries.map((post, idx) => (
           <motion.div 
@@ -70,6 +70,25 @@ export default function JournalCarousel({ entries }: JournalCarouselProps) {
         {/* Spacer to allow the last item to snap fully to the left edge on mobile */}
         <div className="w-[15vw] sm:w-[30vw] md:hidden flex-shrink-0" aria-hidden="true" />
       </div>
+
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-pezreq-warm-white to-transparent pointer-events-none hidden md:block" style={{ opacity: canScrollLeft ? 1 : 0, transition: 'opacity 0.3s' }} />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-pezreq-warm-white to-transparent pointer-events-none hidden md:block" style={{ opacity: canScrollRight ? 1 : 0, transition: 'opacity 0.3s' }} />
+
+      <button 
+        onClick={() => scroll('left')}
+        className={`absolute left-2 lg:left-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 duration-300 ${canScrollLeft ? 'opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
+        aria-label="Previous"
+      >
+        <ChevronLeft className="w-5 h-5 mr-1" strokeWidth={1.5} />
+      </button>
+
+      <button 
+        onClick={() => scroll('right')}
+        className={`absolute right-2 lg:right-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 duration-300 md:hidden ${canScrollRight ? 'opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}
+        aria-label="Next"
+      >
+        <ChevronRight className="w-5 h-5 ml-1" strokeWidth={1.5} />
+      </button>
     </div>
   );
 }

@@ -64,7 +64,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
 
       <button 
         onClick={() => scroll('left')}
-        className={`absolute left-2 lg:left-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 hidden md:flex duration-300 ${canScrollLeft ? 'opacity-0 group-hover:opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
+        className={`absolute left-2 lg:left-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 duration-300 ${canScrollLeft ? 'opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
         aria-label="Previous"
       >
         <ChevronLeft className="w-5 h-5 mr-1" strokeWidth={1.5} />
@@ -72,7 +72,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
 
       <button 
         onClick={() => scroll('right')}
-        className={`absolute right-2 lg:right-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 hidden md:flex duration-300 ${canScrollRight ? 'opacity-0 group-hover:opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}
+        className={`absolute right-2 lg:right-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 duration-300 ${canScrollRight ? 'opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}
         aria-label="Next"
       >
         <ChevronRight className="w-5 h-5 ml-1" strokeWidth={1.5} />
