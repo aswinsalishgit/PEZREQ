@@ -138,7 +138,7 @@ export default function Hero() {
           className="flex flex-col w-full sm:w-auto sm:flex-row items-center gap-4 sm:gap-10"
         >
           <Link 
-            href="/collections/signature"
+            href="/collections"
             className="group relative w-full sm:w-auto px-8 py-4 liquid-glass text-pezreq-charcoal text-xs tracking-[0.15em] uppercase hover:bg-pezreq-champagne transition-colors duration-500"
           >
             <span className="relative z-10 block text-center">Explore Collection</span>
