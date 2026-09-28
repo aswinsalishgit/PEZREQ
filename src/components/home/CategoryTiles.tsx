@@ -42,12 +42,12 @@ const categories = [
 export default function CategoryTiles() {
   return (
     <section className="py-24 container-luxury">
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {categories.map((cat, idx) => (
           <ScrollReveal 
             key={cat.title} 
             delay={idx * 0.15} 
-            className={`group relative overflow-hidden flex flex-col justify-end p-4 sm:p-8 md:p-12 aspect-[4/5] sm:aspect-square md:aspect-auto md:min-h-[45vh] transition-transform duration-1000 ease-[0.16,1,0.3,1] ${cat.colSpan} ${cat.theme === 'dark' ? 'text-pezreq-ivory' : 'text-pezreq-charcoal'} hover:scale-[0.98]`}
+            className={`group relative overflow-hidden flex flex-col justify-end p-8 md:p-12 min-h-[45vh] transition-transform duration-1000 ease-[0.16,1,0.3,1] ${cat.colSpan} ${cat.theme === 'dark' ? 'text-pezreq-ivory' : 'text-pezreq-charcoal'} hover:scale-[0.98]`}
           >
             <Image 
               src={cat.img} 
@@ -66,10 +66,10 @@ export default function CategoryTiles() {
 
             <div className="relative z-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
-                <h3 className="font-serif text-2xl sm:text-4xl md:text-6xl lg:text-7xl mb-1 md:mb-2 tracking-tight transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:translate-x-4">
+                <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-2 tracking-tight transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:translate-x-4">
                   {cat.title}
                 </h3>
-                <p className={`text-micro sm:text-nav uppercase tracking-widest ${cat.theme === 'dark' ? 'text-pezreq-ivory/60' : 'text-pezreq-charcoal/60'} transition-transform duration-700 delay-75 ease-[0.16,1,0.3,1] group-hover:translate-x-4 hidden sm:block`}>
+                <p className={`text-nav uppercase tracking-widest ${cat.theme === 'dark' ? 'text-pezreq-ivory/60' : 'text-pezreq-charcoal/60'} transition-transform duration-700 delay-75 ease-[0.16,1,0.3,1] group-hover:translate-x-4`}>
                   {cat.desc}
                 </p>
               </div>
