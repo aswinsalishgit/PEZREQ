@@ -79,9 +79,16 @@ export default function CustomCursor() {
       }
     };
 
+    const handleMouseDown = (e: MouseEvent) => {
+      if (e.button === 1) {
+        e.preventDefault();
+      }
+    };
+
     window.addEventListener("mousemove", updateMousePosition, { passive: true });
     window.addEventListener("mouseover", handleMouseOver, { passive: true });
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("mousedown", handleMouseDown);
 
     document.documentElement.classList.add('hide-cursor');
 
@@ -89,6 +96,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("mousedown", handleMouseDown);
       document.documentElement.classList.remove('hide-cursor');
     };
   }, []);

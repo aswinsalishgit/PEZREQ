@@ -178,6 +178,10 @@ html {
     background: linear-gradient(135deg, rgba(252, 252, 250, 0.5) 0%, rgba(252, 252, 250, 0.1) 100%);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.5s ease;
   }
@@ -206,6 +210,10 @@ html {
     background: linear-gradient(135deg, rgba(44, 44, 44, 0.7) 0%, rgba(26, 26, 26, 0.4) 100%);
     backdrop-filter: blur(32px) saturate(180%);
     -webkit-backdrop-filter: blur(32px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.5s ease;
     color: var(--color-ivory);
