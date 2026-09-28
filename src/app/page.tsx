@@ -6,6 +6,7 @@ import Hero from "@/components/home/Hero";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ProductCarousel from "@/components/product/ProductCarousel";
 import { products } from "@/data/products";
+import { journalEntries } from "@/data/journal";
 import { ArrowRight } from "lucide-react";
 import ParallaxImage from "@/components/ui/ParallaxImage";
 import CategoryTiles from "@/components/home/CategoryTiles";
@@ -150,18 +151,14 @@ export default function Home() {
           </div>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: "The Architecture of a Ring", date: "SEP 2026", category: "DESIGN", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop" },
-            { title: "Sourcing Ethical Gold", date: "AUG 2026", category: "SUSTAINABILITY", img: "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=2000&auto=format&fit=crop" },
-            { title: "An Interview with the Founder", date: "JUL 2026", category: "PEOPLE", img: "https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf?q=80&w=2000&auto=format&fit=crop" },
-          ].map((post, idx) => (
+          {journalEntries.slice(0, 3).map((post, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
-              <Link href="/journal" className="group block">
-                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden">
-                  <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <Link href={`/journal/${post.slug}`} className="group block">
+                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden border border-glass-border">
+                  <Image src={post.images[0]} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between items-center mb-3">
-                  <span className="text-micro">{post.category}</span>
+                  <span className="text-micro uppercase">{post.category}</span>
                   <span className="text-meta">{post.date}</span>
                 </div>
                 <h4 className="font-serif text-xl text-pezreq-charcoal leading-snug group-hover:text-pezreq-muted transition-colors">
