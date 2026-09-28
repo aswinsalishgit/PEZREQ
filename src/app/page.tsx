@@ -130,9 +130,9 @@ export default function Home() {
             </Link>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 pb-8 -mx-4 px-4 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 scroll-smooth">
           {journalEntries.slice(0, 3).map((post, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1}>
+            <ScrollReveal key={idx} delay={idx * 0.1} className="w-[80vw] sm:w-[320px] flex-shrink-0 snap-start md:w-auto md:flex-shrink-1">
               <Link href={`/journal/${post.slug}`} className="group block">
                 <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden">
                   <Image src={post.images[0]} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
