@@ -20,8 +20,8 @@ const mobileLinks = [
 ];
 
 const mobileUtilities = [
-  { name: "Search", href: "/search" },
-  { name: "Account", href: "/account" },
+  { name: "Search", href: "/shop" },
+  { name: "Account", href: "/contact" },
   { name: "Wishlist", href: "/wishlist" },
 ];
 

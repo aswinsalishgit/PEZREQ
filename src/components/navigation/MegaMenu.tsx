@@ -29,11 +29,11 @@ const menuData = {
   },
   COLLECTIONS: {
     links: [
-      { name: "Featured", href: "/collections/featured" },
-      { name: "Signature", href: "/collections/signature" },
-      { name: "New Arrivals", href: "/collections/new-arrivals" },
-      { name: "Everyday", href: "/collections/everyday" },
-      { name: "Occasion", href: "/collections/occasion" },
+      { name: "Featured", href: "/collections" },
+      { name: "Signature", href: "/collections" },
+      { name: "New Arrivals", href: "/collections" },
+      { name: "Everyday", href: "/collections" },
+      { name: "Occasion", href: "/collections" },
     ],
     image: "/aureliaring.jpg",
     imageAlt: "Signature Collection",
