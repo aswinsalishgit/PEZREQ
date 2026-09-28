@@ -116,7 +116,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-micro text-pezreq-ivory/80 mb-6 tracking-[0.3em]"
         >
-          THE PEZREQ HOUSE
+          THE PEZREQ HOUSE — DEMO WEBSITE
         </motion.h2>
 
         <motion.h1 

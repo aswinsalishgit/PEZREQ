@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pezreq.com"),
   title: {
     template: "%s | PEZREQ",
-    default: "PEZREQ | Luxury Jewellery",
+    default: "PEZREQ | Demo Website",
   },
   description: "PEZREQ is a luxury jewellery house offering timeless, architectural, and sophisticated pieces shaped by restraint.",
   keywords: ["Luxury Jewellery", "Architectural Jewellery", "Fine Jewellery", "Rings", "Necklaces", "Bespoke Jewellery"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   creator: "PEZREQ",
   publisher: "PEZREQ",
   openGraph: {
-    title: "PEZREQ | Luxury Jewellery",
+    title: "PEZREQ | Demo Website",
     description: "Architecture for the body. Crafted for those who understand restraint.",
     url: "https://pezreq.com",
     siteName: "PEZREQ",
