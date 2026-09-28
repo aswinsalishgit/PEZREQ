@@ -37,7 +37,7 @@ export default function ContactPage() {
                 
                 <div>
                   <h4 className="text-micro text-pezreq-muted mb-2">WHATSAPP</h4>
-                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
+                  <a href="https://wa.me/916282788268" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
                     Message the Atelier
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -45,7 +45,7 @@ export default function ContactPage() {
 
                 <div>
                   <h4 className="text-micro text-pezreq-muted mb-2">EMAIL</h4>
-                  <a href="mailto:concierge@pezreq.com" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
+                  <a href="mailto:pezreq@gmail.com" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
                     concierge@pezreq.com
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
                 <div>
                   <h4 className="text-micro text-pezreq-muted mb-2">SOCIAL</h4>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
+                  <a href="https://www.instagram.com/pezreq/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors w-fit">
                     @pezreq_house
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>

@@ -125,7 +125,7 @@ export default function Header() {
               <Link href="/wishlist" className="hidden lg:block p-2 hover:opacity-60 transition-opacity focus:outline-none" aria-label="Wishlist">
                 <Heart className="h-5 w-5" strokeWidth={1.2} />
               </Link>
-              <Link href="/account" className="hidden lg:block p-2 hover:opacity-60 transition-opacity focus:outline-none" aria-label="Account">
+              <Link href="/contact" className="hidden lg:block p-2 hover:opacity-60 transition-opacity focus:outline-none" aria-label="Contact">
                 <User className="h-5 w-5" strokeWidth={1.2} />
               </Link>
               <button 

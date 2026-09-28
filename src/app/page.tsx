@@ -65,7 +65,7 @@ export default function Home() {
                 A study in fluidity. Solid gold and sterling silver are sculpted to trace the natural lines of the body, creating pieces that feel inherently personal.
               </p>
               <Link 
-                href="/collections/contour"
+                href="/collections"
                 className="group flex items-center gap-4 text-nav link-underline pb-1 transition-colors"
               >
                 Discover Contour
@@ -182,7 +182,7 @@ export default function Home() {
           <ScrollReveal>
             <h2 className="text-display text-pezreq-ivory mb-8 drop-shadow-lg">Elevated Daily.</h2>
             <Link 
-              href="/collections/everyday"
+              href="/collections"
               className="inline-block px-10 py-4 liquid-glass text-pezreq-charcoal text-nav transition-colors"
             >
               Shop The Everyday Edition
