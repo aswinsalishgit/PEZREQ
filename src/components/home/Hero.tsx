@@ -81,7 +81,7 @@ export default function Hero() {
           autoPlay
           muted
           playsInline
-          poster="/pezreq%20banner.png"
+          poster="/pezreq-banner.png"
           preload="metadata"
           onTimeUpdate={() => handleTimeUpdate(0)}
         >
@@ -92,7 +92,7 @@ export default function Hero() {
           className={`absolute inset-0 w-full h-full object-cover object-center lg:object-[center_30%] transition-opacity duration-[2000ms] ease-in-out ${activeVideo === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
           muted
           playsInline
-          poster="/pezreq%20banner.png"
+          poster="/pezreq-banner.png"
           preload="auto"
           onTimeUpdate={() => handleTimeUpdate(1)}
         >

@@ -65,7 +65,7 @@ export default function ContactPage() {
             <ScrollReveal delay={0.2} type="image">
               <div className="mt-8 relative aspect-[4/5] w-full bg-pezreq-champagne overflow-hidden">
                 <ParallaxImage 
-                  src="/pezreq banner.png" 
+                  src="/pezreq-banner.png" 
                   alt="PEZREQ Atelier" 
                   containerClassName="absolute inset-0 w-full h-full" 
                 />

@@ -173,7 +173,7 @@ export default function Home() {
       {/* 11. FULL-BLEED CAMPAIGN (Elevated Daily) */}
       <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
         <ParallaxImage 
-          src="/pezreq banner.png" 
+          src="/pezreq-banner.png" 
           alt="Campaign Banner"
           overlay={true}
           containerClassName="absolute inset-0 w-full h-full"

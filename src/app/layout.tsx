@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "PEZREQ",
     images: [
       {
-        url: "/pezreq banner.png",
+        url: "/pezreq-banner.png",
         width: 1200,
         height: 630,
         alt: "PEZREQ Luxury Jewellery",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "PEZREQ | Luxury Jewellery",
     description: "Architecture for the body. Crafted for those who understand restraint.",
     creator: "@pezreq_house",
-    images: ["/pezreq banner.png"],
+    images: ["/pezreq-banner.png"],
   },
   robots: {
     index: true,
@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased overflow-x-hidden`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} h-full antialiased overflow-x-hidden`}>
       <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background overflow-x-hidden w-full max-w-[100vw]">
         <StoreProvider>
           <PageTransition>

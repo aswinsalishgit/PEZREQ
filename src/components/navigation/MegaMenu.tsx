@@ -111,11 +111,12 @@ export default function MegaMenu({ activeMenu, onMouseEnter, onMouseLeave }: Meg
               transition={{ delay: 0.1, duration: durations.base, ease: easings.entrance }}
               className="flex-1 max-w-lg hidden lg:flex gap-8 items-center border-l border-glass-border pl-12"
             >
-              <div className="relative aspect-[3/4] w-48 bg-pezreq-champagne overflow-hidden shrink-0">
+              <div className="relative aspect-[3/4] h-64 w-48 bg-pezreq-champagne overflow-hidden shrink-0">
                 <Image 
                   src={currentMenu.image} 
                   alt={currentMenu.imageAlt} 
                   fill 
+                  sizes="192px"
                   className="object-cover"
                 />
               </div>
