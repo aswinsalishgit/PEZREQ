@@ -115,7 +115,7 @@ export default function Footer() {
         <ScrollReveal type="typography" delay={0.2}>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
             <div>
-              <Link href="/" className="inline-block mb-8 relative h-24 md:h-32 w-[280px] md:w-[400px]">
+              <Link href="/" className="inline-block mb-8 relative h-32 md:h-56 w-[320px] md:w-[700px]">
                 <Image 
                   src="/pezreq-title.png" 
                   alt="PEZREQ" 
