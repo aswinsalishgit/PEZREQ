@@ -1,20 +1,48 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Product } from "@/data/products";
 import ProductCard from "./ProductCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface ProductCarouselProps {
   products: Product[];
 }
 
 export default function ProductCarousel({ products }: ProductCarouselProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(Math.ceil(scrollLeft) < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.8 : 400;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="relative w-full overflow-hidden" ref={containerRef}>
-      <div className="flex gap-4 md:gap-8 overflow-x-auto pb-12 px-4 sm:px-8 lg:px-12 snap-x snap-mandatory hide-scrollbar">
+    <div className="relative w-full group">
+      <div 
+        ref={scrollRef}
+        onScroll={checkScroll}
+        className="flex gap-4 md:gap-8 overflow-x-auto pb-12 px-4 sm:px-8 lg:px-12 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+      >
         {products.map((product, idx) => (
           <motion.div 
             key={product.id}
@@ -28,6 +56,25 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
           </motion.div>
         ))}
       </div>
+
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-pezreq-warm-white to-transparent pointer-events-none hidden md:block" style={{ opacity: canScrollLeft ? 1 : 0, transition: 'opacity 0.3s' }} />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-pezreq-warm-white to-transparent pointer-events-none hidden md:block" style={{ opacity: canScrollRight ? 1 : 0, transition: 'opacity 0.3s' }} />
+
+      <button 
+        onClick={() => scroll('left')}
+        className={`absolute left-2 lg:left-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 hidden md:flex duration-300 ${canScrollLeft ? 'opacity-0 group-hover:opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
+        aria-label="Previous"
+      >
+        <ChevronLeft className="w-5 h-5 mr-1" strokeWidth={1.5} />
+      </button>
+
+      <button 
+        onClick={() => scroll('right')}
+        className={`absolute right-2 lg:right-6 top-[35%] -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-pezreq-warm-white/90 backdrop-blur-md border border-glass-border shadow-md rounded-full text-pezreq-charcoal hover:bg-pezreq-charcoal hover:text-pezreq-ivory transition-all z-10 hidden md:flex duration-300 ${canScrollRight ? 'opacity-0 group-hover:opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}
+        aria-label="Next"
+      >
+        <ChevronRight className="w-5 h-5 ml-1" strokeWidth={1.5} />
+      </button>
     </div>
   );
 }
