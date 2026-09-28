@@ -25,7 +25,7 @@ export const journalEntries: JournalEntry[] = [
       "Restraint is our most vital tool. In an era of visual noise, there is profound power in stripping an object down to its most essential geometric truth. It takes more confidence to leave a surface unembellished than it does to cover it in diamonds. We rely on the absolute perfection of the polish, the exactness of the bevel, and the honesty of the material to convey luxury.",
       "The result is a collection that does not demand attention, but commands it. It is design that serves the wearer, creating a dialogue between the rigid geometry of the object and the fluid motion of the human form."
     ],
-    images: ["/placeholder.jpg", "/placeholder-collection.jpg"],
+    images: ["https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop", "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=2000&auto=format&fit=crop"],
   },
   {
     id: "j_gold_light_shadow",
@@ -41,7 +41,7 @@ export const journalEntries: JournalEntry[] = [
       "Consider the Noir collection. By pairing 18k white gold with black rhodium plating, we create deliberate shadows that make the interspersed diamonds appear to float in a void. We are not just setting stones; we are orchestrating how light enters and exits the piece.",
       "Light is the only element of our jewellery that we cannot physically control, yet it is the element that brings the architecture to life. Understanding this relationship is the difference between making an object and crafting an experience."
     ],
-    images: ["/placeholder-collection.jpg"],
+    images: ["https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=2000&auto=format&fit=crop"],
   },
   {
     id: "j_designing_everyday_ritual",
@@ -57,7 +57,7 @@ export const journalEntries: JournalEntry[] = [
       "When we developed the Everyday Edition, we focused on ergonomics. How does a cuff rest against a laptop? Does a pendant interfere with the collar of a shirt? These micro-interactions dictate the success of a design far more than its initial visual impact.",
       "By elevating these daily essentials with uncompromising materials and Swiss precision, we transform the mundane act of dressing into a private moment of luxury."
     ],
-    images: ["/placeholder.jpg"],
+    images: ["https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf?q=80&w=2000&auto=format&fit=crop"],
   },
   {
     id: "j_art_of_restraint",
@@ -73,7 +73,7 @@ export const journalEntries: JournalEntry[] = [
       "This minimalist approach requires flawless execution. When the eye is not distracted by ornate details, it immediately notices the quality of the craftsmanship. A perfectly straight line, a flawless curve, an invisible setting—these are the hallmarks of a confident design language.",
       "Restraint is not the absence of design; it is the ultimate expression of it."
     ],
-    images: ["/placeholder-collection.jpg"],
+    images: ["https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2000&auto=format&fit=crop"],
   },
   {
     id: "j_inside_pezreq_studio",
@@ -89,6 +89,6 @@ export const journalEntries: JournalEntry[] = [
       "Our atelier is quiet, focused, and immaculate. The environment reflects the work. Each artisan is given the time and space required to execute perfection. We do not rush. We do not compromise.",
       "This meticulous environment is the birthplace of every PEZREQ piece, ensuring that the physical object perfectly matches the uncompromising vision of the design."
     ],
-    images: ["/placeholder.jpg"],
+    images: ["https://images.unsplash.com/photo-1574342247294-bba914c67f08?q=80&w=2000&auto=format&fit=crop"],
   }
 ];

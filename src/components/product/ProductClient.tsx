@@ -91,7 +91,7 @@ export default function ProductClient({ product }: ProductClientProps) {
             {/* Title & Price */}
             <h1 className="text-display text-pezreq-charcoal mb-4">{product.name}</h1>
             <span className="text-2xl font-light text-pezreq-charcoal mb-8">
-              {new Intl.NumberFormat("en-US", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
+              {new Intl.NumberFormat("en-IN", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
             </span>
 
             <p className="text-body text-pezreq-charcoal/80 mb-10 max-w-md font-light leading-relaxed">
