@@ -37,7 +37,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
   };
 
   return (
-    <div className="relative w-full group overflow-hidden">
+    <div className="relative w-full group">
       <div 
         ref={scrollRef}
         onScroll={checkScroll}

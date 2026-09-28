@@ -75,8 +75,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background overflow-x-hidden">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased overflow-x-hidden`}>
+      <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background overflow-x-hidden w-full max-w-[100vw]">
         <StoreProvider>
           <PageTransition>
             {children}
