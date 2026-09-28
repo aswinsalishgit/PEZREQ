@@ -153,7 +153,7 @@ export default function Home() {
           {[
             { title: "The Architecture of a Ring", date: "SEP 2026", category: "DESIGN", img: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop" },
             { title: "Sourcing Ethical Gold", date: "AUG 2026", category: "SUSTAINABILITY", img: "https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=2000&auto=format&fit=crop" },
-            { title: "An Interview with the Founder", date: "JUL 2026", category: "PEOPLE", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop" },
+            { title: "An Interview with the Founder", date: "JUL 2026", category: "PEOPLE", img: "https://images.unsplash.com/photo-1614179924047-e1ab49a0a0cf?q=80&w=2000&auto=format&fit=crop" },
           ].map((post, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
               <Link href="/journal" className="group block">

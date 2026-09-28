@@ -91,9 +91,10 @@ export default function Footer() {
             <h4 className="text-micro text-pezreq-ivory/50 mb-8">FOLLOW</h4>
             <ul className="space-y-4">
               {[
-                { name: "Instagram", href: "https://www.instagram.com/pezreq/" },
-                { name: "WhatsApp", href: "https://wa.me/916282788268" },
-                { name: "Email", href: "mailto:pezreq@gmail.com" }
+                { name: "Instagram", href: "https://instagram.com" },
+                { name: "Pinterest", href: "https://pinterest.com" },
+                { name: "WhatsApp", href: "https://wa.me/" },
+                { name: "Email", href: "mailto:concierge@pezreq.com" }
               ].map((link) => (
                 <li key={link.name}>
                   <a 
@@ -114,7 +115,7 @@ export default function Footer() {
         <ScrollReveal type="typography" delay={0.2}>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
             <div>
-              <Link href="/" className="inline-block mb-8 relative h-[120px] md:h-[200px] w-full max-w-[800px] min-w-[320px]">
+              <Link href="/" className="inline-block mb-8 relative h-32 md:h-56 w-[320px] md:w-[700px]">
                 <Image 
                   src="/pezreq-title.png" 
                   alt="PEZREQ" 

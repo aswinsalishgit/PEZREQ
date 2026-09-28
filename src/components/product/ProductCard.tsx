@@ -58,7 +58,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               {product.name}
             </h4>
             <span className="text-sm md:text-body font-medium text-pezreq-charcoal shrink-0">
-              {new Intl.NumberFormat("en-IN", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
+              {new Intl.NumberFormat("en-US", { style: "currency", currency: product.currency, maximumFractionDigits: 0 }).format(product.price)}
             </span>
           </div>
           <span className="text-meta text-xs md:text-sm">{product.materials[0]}</span>

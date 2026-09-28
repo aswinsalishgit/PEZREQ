@@ -90,7 +90,7 @@ export default function CartPage() {
                           <Trash2 className="w-4 h-4" />
                         </button>
                         <span className="text-body font-medium text-pezreq-charcoal hidden sm:block">
-                          {new Intl.NumberFormat("en-IN", { style: "currency", currency: item.product.currency, maximumFractionDigits: 0 }).format(item.product.price * item.quantity)}
+                          {new Intl.NumberFormat("en-US", { style: "currency", currency: item.product.currency, maximumFractionDigits: 0 }).format(item.product.price * item.quantity)}
                         </span>
                       </div>
                     </div>
@@ -106,7 +106,7 @@ export default function CartPage() {
                 
                 <div className="flex justify-between items-center mb-4 text-body text-pezreq-charcoal">
                   <span>Subtotal</span>
-                  <span>{new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(cartTotal)}</span>
+                  <span>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(cartTotal)}</span>
                 </div>
                 <div className="flex justify-between items-center mb-8 text-body text-pezreq-charcoal">
                   <span>Shipping</span>
@@ -115,7 +115,7 @@ export default function CartPage() {
                 
                 <div className="flex justify-between items-center mb-10 text-xl font-medium text-pezreq-charcoal border-t border-glass-border pt-6">
                   <span>Total</span>
-                  <span>{new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(cartTotal)}</span>
+                  <span>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(cartTotal)}</span>
                 </div>
                 
                 <button className="w-full py-4 liquid-glass-dark text-pezreq-ivory text-nav uppercase tracking-widest hover:bg-pezreq-near-black transition-colors mb-4">

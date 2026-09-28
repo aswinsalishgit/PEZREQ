@@ -115,7 +115,7 @@ export default function CartDrawer() {
                             </button>
                           </div>
                           <span className="text-body font-medium text-pezreq-charcoal">
-                            {new Intl.NumberFormat("en-IN", { style: "currency", currency: item.product.currency, maximumFractionDigits: 0 }).format(item.product.price * item.quantity)}
+                            {new Intl.NumberFormat("en-US", { style: "currency", currency: item.product.currency, maximumFractionDigits: 0 }).format(item.product.price * item.quantity)}
                           </span>
                         </div>
                       </div>
@@ -133,7 +133,7 @@ export default function CartDrawer() {
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-nav uppercase tracking-widest text-pezreq-charcoal">Subtotal</span>
                   <span className="text-xl font-light text-pezreq-charcoal">
-                    {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(cartTotal)}
+                    {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(cartTotal)}
                   </span>
                 </div>
                 <p className="text-meta text-pezreq-muted mb-6">

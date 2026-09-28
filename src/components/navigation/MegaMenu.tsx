@@ -23,7 +23,7 @@ const menuData = {
       { name: "Earrings", href: "/shop/earrings" },
       { name: "View All", href: "/shop" },
     ],
-    image: "/aureliaring.jpg",
+    image: "/placeholder.jpg",
     imageAlt: "Latest Shop Collection",
     editorialText: "Discover pieces that transcend time, sculpted for the modern aesthetic."
   },
@@ -35,7 +35,7 @@ const menuData = {
       { name: "Everyday", href: "/collections/everyday" },
       { name: "Occasion", href: "/collections/occasion" },
     ],
-    image: "/solischoker.jpg",
+    image: "/placeholder-collection.jpg",
     imageAlt: "Signature Collection",
     editorialText: "The defining aesthetic. Bold, architectural, and timeless."
   },
@@ -47,7 +47,7 @@ const menuData = {
       { name: "Gemstone", href: "/shop?material=gemstone" },
       { name: "Bespoke", href: "/contact?subject=bespoke" },
     ],
-    image: "/lineapendant.jpg",
+    image: "/placeholder.jpg",
     imageAlt: "Fine Jewellery Materials",
     editorialText: "Crafted from ethically sourced, exceptional materials."
   },
@@ -57,7 +57,7 @@ const menuData = {
       { name: "Craftsmanship", href: "/about#craftsmanship" },
       { name: "Materials", href: "/about#materials" },
     ],
-    image: "/atelier.jpg",
+    image: "/pezreq banner.png",
     imageAlt: "PEZREQ Craftsmanship",
     editorialText: "We sculpt light, space, and material into timeless architecture for the body."
   }
