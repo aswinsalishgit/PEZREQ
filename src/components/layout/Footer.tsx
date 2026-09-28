@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -114,10 +115,13 @@ export default function Footer() {
         <ScrollReveal type="typography" delay={0.2}>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 border-t border-pezreq-ivory/20 pt-12">
             <div>
-              <Link href="/" className="inline-block mb-8">
-                <span className="font-serif text-4xl md:text-6xl tracking-widest text-pezreq-ivory hover:text-pezreq-champagne transition-colors">
-                  PEZREQ
-                </span>
+              <Link href="/" className="inline-block mb-8 relative h-12 w-48">
+                <Image 
+                  src="/pezreq-title.png" 
+                  alt="PEZREQ" 
+                  fill 
+                  className="object-contain object-left invert opacity-90 hover:opacity-100 transition-opacity" 
+                />
               </Link>
               <p className="text-body max-w-sm text-pezreq-ivory/60 italic font-serif">
                 Shaping the void. Emboldening the form. <br />

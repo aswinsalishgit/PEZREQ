@@ -132,7 +132,7 @@ export default function Home() {
           <ScrollReveal direction="left" type="image">
             <div className="relative aspect-[3/4] w-full border border-pezreq-ivory/10 overflow-hidden bg-pezreq-near-black p-8">
                <div className="w-full h-full relative opacity-70 mix-blend-luminosity">
-                 <ParallaxImage src="https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?q=80&w=2000&auto=format&fit=crop" alt="Craftsmanship" containerClassName="absolute inset-0 w-full h-full" />
+                 <ParallaxImage src="/atelier.jpg" alt="Craftsmanship" containerClassName="absolute inset-0 w-full h-full" />
                </div>
             </div>
           </ScrollReveal>

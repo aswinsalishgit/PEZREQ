@@ -27,7 +27,7 @@ const categories = [
     desc: "Architectural cuffs.",
     colSpan: "col-span-1",
     theme: "light",
-    img: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?q=80&w=2000&auto=format&fit=crop"
+    img: "/sereinbracelet.jpg"
   },
   { 
     title: "Earrings", 
