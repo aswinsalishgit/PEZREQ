@@ -5,7 +5,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ProductCarousel from "@/components/product/ProductCarousel";
-import JournalCarousel from "@/components/journal/JournalCarousel";
 import { products } from "@/data/products";
 import { journalEntries } from "@/data/journal";
 import { ArrowRight } from "lucide-react";
@@ -122,16 +121,33 @@ export default function Home() {
       </section>
 
       {/* 9. JOURNAL (Editorial Stories) */}
-      <section className="py-32 container-luxury">
+      <section className="py-16 md:py-32 container-luxury">
         <ScrollReveal>
-          <div className="flex justify-between items-end mb-16">
+          <div className="flex justify-between items-end mb-8 md:mb-16">
             <h3 className="font-serif text-3xl md:text-4xl text-pezreq-charcoal">The Journal</h3>
-            <Link href="/journal" className="text-nav hidden md:block link-underline pb-1 transition-colors">
+            <Link href="/journal" className="text-nav link-underline pb-1 transition-colors text-xs md:text-sm">
               Read All Entries
             </Link>
           </div>
         </ScrollReveal>
-        <JournalCarousel entries={journalEntries.slice(0, 3)} />
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8">
+          {journalEntries.slice(0, 3).map((post, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.1}>
+              <Link href={`/journal/${post.slug}`} className="group block">
+                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-2 md:mb-6 overflow-hidden">
+                  <Image src={post.images[0]} alt={post.title} fill sizes="(max-width: 768px) 33vw, 33vw" className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                </div>
+                <div className="flex flex-col lg:flex-row justify-between lg:items-center mb-1 md:mb-3 gap-1 lg:gap-0">
+                  <span className="text-[8px] md:text-micro uppercase">{post.category}</span>
+                  <span className="text-[8px] md:text-meta text-pezreq-muted md:text-pezreq-charcoal hidden sm:block">{post.date}</span>
+                </div>
+                <h4 className="font-serif text-[11px] sm:text-sm md:text-xl text-pezreq-charcoal leading-snug group-hover:text-pezreq-muted transition-colors line-clamp-3 md:line-clamp-none">
+                  {post.title}
+                </h4>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
       </section>
 
       {/* 10. SERVICE PROMISE */}
