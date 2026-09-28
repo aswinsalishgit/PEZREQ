@@ -53,7 +53,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left">
               <div className="relative aspect-[3/4] w-full bg-pezreq-champagne overflow-hidden">
                  <Image 
-                   src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=2000&auto=format&fit=crop" 
+                   src="/solischoker.jpg" 
                    alt="PEZREQ Design Philosophy" 
                    fill 
                    className="object-cover hover:scale-105 transition-transform duration-[2s] ease-[0.16,1,0.3,1]"
