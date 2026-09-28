@@ -134,7 +134,7 @@ export default function Home() {
           {journalEntries.slice(0, 3).map((post, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.1}>
               <Link href={`/journal/${post.slug}`} className="group block">
-                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden border border-glass-border">
+                <div className="relative aspect-[3/4] bg-pezreq-champagne mb-6 overflow-hidden">
                   <Image src={post.images[0]} alt={post.title} fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                 </div>
                 <div className="flex justify-between items-center mb-3">
@@ -151,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* 10. SERVICE PROMISE */}
-      <section className="border-t border-glass-border bg-pezreq-warm-white">
+      <section className="bg-pezreq-warm-white">
         <div className="container-luxury py-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
           {[
             { title: "Bespoke Consultation", desc: "Private appointments" },
