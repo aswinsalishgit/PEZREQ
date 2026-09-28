@@ -79,16 +79,21 @@ export default function CustomCursor() {
       }
     };
 
-    const handleMouseDown = (e: MouseEvent) => {
+    const handleMiddleClick = (e: MouseEvent | PointerEvent) => {
       if (e.button === 1) {
         e.preventDefault();
+        e.stopPropagation();
       }
     };
 
     window.addEventListener("mousemove", updateMousePosition, { passive: true });
     window.addEventListener("mouseover", handleMouseOver, { passive: true });
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("mousedown", handleMouseDown);
+    
+    // Aggressively prevent middle-click auto-scroll
+    document.addEventListener("mousedown", handleMiddleClick, { capture: true, passive: false });
+    document.addEventListener("pointerdown", handleMiddleClick, { capture: true, passive: false });
+    document.addEventListener("auxclick", handleMiddleClick, { capture: true, passive: false });
 
     document.documentElement.classList.add('hide-cursor');
 
@@ -96,7 +101,9 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mousedown", handleMiddleClick, { capture: true });
+      document.removeEventListener("pointerdown", handleMiddleClick, { capture: true });
+      document.removeEventListener("auxclick", handleMiddleClick, { capture: true });
       document.documentElement.classList.remove('hide-cursor');
     };
   }, []);
