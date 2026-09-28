@@ -92,26 +92,6 @@ export default function Home() {
         <ProductCarousel products={signatureProducts} />
       </section>
 
-      {/* 5. FULL-BLEED CAMPAIGN */}
-      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
-        <ParallaxImage 
-          src="/pezreq banner.png" 
-          alt="Campaign Banner"
-          overlay={true}
-          containerClassName="absolute inset-0 w-full h-full"
-        />
-        <div className="absolute inset-0 flex items-center justify-center text-center p-4">
-          <ScrollReveal>
-            <h2 className="text-display text-pezreq-ivory mb-8 drop-shadow-lg">Elevated Daily.</h2>
-            <Link 
-              href="/collections/everyday"
-              className="inline-block px-10 py-4 liquid-glass text-pezreq-charcoal text-nav transition-colors"
-            >
-              Shop The Everyday Edition
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* 5. CRAFTSMANSHIP (Storytelling) */}
       <section className="py-24 md:py-32 bg-pezreq-charcoal text-pezreq-ivory">
@@ -187,6 +167,27 @@ export default function Home() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
+      </section>
+
+      {/* 11. FULL-BLEED CAMPAIGN (Elevated Daily) */}
+      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
+        <ParallaxImage 
+          src="/pezreq banner.png" 
+          alt="Campaign Banner"
+          overlay={true}
+          containerClassName="absolute inset-0 w-full h-full"
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-center p-4">
+          <ScrollReveal>
+            <h2 className="text-display text-pezreq-ivory mb-8 drop-shadow-lg">Elevated Daily.</h2>
+            <Link 
+              href="/collections/everyday"
+              className="inline-block px-10 py-4 liquid-glass text-pezreq-charcoal text-nav transition-colors"
+            >
+              Shop The Everyday Edition
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
