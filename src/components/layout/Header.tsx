@@ -36,7 +36,7 @@ export default function Header() {
   const navItems: { label: string; menu: MegaMenuType; href: string }[] = [
     { label: "SHOP", menu: "SHOP", href: "/shop" },
     { label: "COLLECTIONS", menu: "COLLECTIONS", href: "/collections" },
-    { label: "JEWELLERY", menu: "JEWELLERY", href: "/shop" },
+    { label: "JEWELLERY", menu: "JEWELLERY", href: "/jewellery" },
     { label: "ABOUT", menu: "ABOUT", href: "/about" },
     { label: "JOURNAL", menu: null, href: "/journal" },
   ];

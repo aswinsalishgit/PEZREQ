@@ -14,7 +14,7 @@ interface MobileMenuProps {
 const mobileLinks = [
   { name: "Shop", href: "/shop" },
   { name: "Collections", href: "/collections" },
-  { name: "Jewellery", href: "/shop" },
+  { name: "Jewellery", href: "/jewellery" },
   { name: "About", href: "/about" },
   { name: "Journal", href: "/journal" },
 ];
