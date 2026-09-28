@@ -55,6 +55,8 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
             <ProductCard product={product} />
           </motion.div>
         ))}
+        {/* Spacer to allow the last item to snap fully to the left edge on mobile */}
+        <div className="w-[20vw] sm:w-[40vw] flex-shrink-0" aria-hidden="true" />
       </div>
 
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-pezreq-warm-white to-transparent pointer-events-none hidden md:block" style={{ opacity: canScrollLeft ? 1 : 0, transition: 'opacity 0.3s' }} />

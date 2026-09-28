@@ -67,6 +67,8 @@ export default function JournalCarousel({ entries }: JournalCarouselProps) {
             </Link>
           </motion.div>
         ))}
+        {/* Spacer to allow the last item to snap fully to the left edge on mobile */}
+        <div className="w-[15vw] sm:w-[30vw] md:hidden flex-shrink-0" aria-hidden="true" />
       </div>
     </div>
   );
