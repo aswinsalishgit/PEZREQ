@@ -91,10 +91,9 @@ export default function Footer() {
             <h4 className="text-micro text-pezreq-ivory/50 mb-8">FOLLOW</h4>
             <ul className="space-y-4">
               {[
-                { name: "Instagram", href: "https://instagram.com" },
-                { name: "Pinterest", href: "https://pinterest.com" },
-                { name: "WhatsApp", href: "https://wa.me/" },
-                { name: "Email", href: "mailto:concierge@pezreq.com" }
+                { name: "Instagram", href: "https://www.instagram.com/pezreq/" },
+                { name: "WhatsApp", href: "https://wa.me/916282788268" },
+                { name: "Email", href: "mailto:pezreq@gmail.com" }
               ].map((link) => (
                 <li key={link.name}>
                   <a 
