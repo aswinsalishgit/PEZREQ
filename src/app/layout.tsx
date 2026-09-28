@@ -76,7 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background">
+      <body className="min-h-full flex flex-col font-sans text-pezreq-charcoal bg-background overflow-x-hidden">
         <StoreProvider>
           <PageTransition>
             {children}
